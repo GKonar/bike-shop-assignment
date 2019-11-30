@@ -1,12 +1,18 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
+import WelcomePage from './WelcomePage';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>BikeShop</h1>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <Switch>
+        <Route 
+        exact path="/" 
+        render={() => <WelcomePage />}
+        />
+        {/* will need four different routes */}
+      </Switch>
+    )
+  }
 }
 
-export default App;
