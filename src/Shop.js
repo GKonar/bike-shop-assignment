@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 import { withStyles } from '@material-ui/styles';
+import Bike from './Bike'
 
 import backgroundVideo from './assets/video/Cyclist-1.mp4';
 
 const styles = {
+  root: {
+    
+  },
   video: {
     height: "100vh",
     width: '100%',
@@ -13,7 +17,17 @@ const styles = {
     left: "0",
     overflow: "hidden",
     zIndex: "-1",
-    filter:"brightness(150%)"
+    filter: "brightness(150%)"
+  },
+  productsContainer: {
+    width: "70%",
+    margin: "0 auto"
+  },
+  products: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    margin: "0 auto"
   }
 }
 
@@ -25,6 +39,16 @@ class Shop extends Component {
     return (
       <div className={classes.root}>
         <Navbar/>
+        <div className={classes.productsContainer}>
+          <div className={classes.products}>
+            <Bike />
+            <Bike />
+            <Bike />
+            <Bike />
+            <Bike />
+            <Bike />
+          </div>
+        </div>
         
 
         <div className={classes.video}>
