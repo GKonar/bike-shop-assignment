@@ -9,6 +9,7 @@ import logo from './assets/images/Logo.png';
 const styles = {
   navContainer: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
+    zIndex: "100"
   },
   nav: {
     position: "relative",
@@ -52,8 +53,17 @@ const styles = {
 }
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      numOfItems: 0,
+    }
+  }
+
   render() {
     const { classes } = this.props;
+    const { numOfItems } = this.state
 
     return (
       <div className={classes.navContainer}>
@@ -62,9 +72,9 @@ class Navbar extends Component {
           <Link to="/work">work</Link>
           <Link to="/"><img src={`${logo}`} alt="logo"/></Link>
           <Link to="/shop">shop</Link>
-          <Link to="/contact">customer</Link>
+          <Link to="/customer">customer</Link>
           <div className={classes.basketContainer}>
-            <span className={classes.itemsNumber}>0</span>
+            <span className={classes.itemsNumber}>{numOfItems}</span>
             <ShoppingBasket 
             className={classes.basket}
             onClick={() => console.log('Open basket')}/>
