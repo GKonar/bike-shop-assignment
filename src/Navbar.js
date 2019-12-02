@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 // import AddShoppingCart from '@material-ui/icons/AddShoppingCart';
-import ShoppingBasket from '@material-ui/icons/ShoppingBasket'
+import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 
 import logo from './assets/images/Logo.png';
 
