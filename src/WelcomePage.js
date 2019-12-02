@@ -40,6 +40,9 @@ const styles = {
   header: {
     textAlign: "center"
   },
+  link: {
+    textDecoration: "none"
+  },
   button: {
     padding: ".8rem 2.5rem",
     backgroundColor:  "rgba(0, 0, 0, 0.8)",

@@ -18,12 +18,15 @@ const styles = {
 }
 
 class Shop extends Component {
+
   render() {
     const { classes } = this.props;
     
     return (
       <div className={classes.root}>
         <Navbar/>
+        
+
         <div className={classes.video}>
           <video autoPlay loop muted>
             <source src={backgroundVideo} type='video/mp4' />
