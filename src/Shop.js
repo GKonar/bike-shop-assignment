@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import { withStyles } from '@material-ui/styles';
 import Bike from './Bike'
+import bikes from './shopProducts';
 
 import backgroundVideo from './assets/video/Cyclist-1.mp4';
 
@@ -35,7 +36,7 @@ class Shop extends Component {
 
   render() {
     const { classes } = this.props;
-    
+    console.log(bikes);
     return (
       <div className={classes.root}>
         <Navbar/>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/styles';
 
-import VintageOliva_1 from './assets/images/fourth-model_left-image.png';
-import VintageOliva_2 from './assets/images/fourth-model_right-image.png';
+import bike_1 from './assets/images/bike_1.png';
+import bike_1a from './assets/images/bike_1a.png';
 
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 
@@ -68,7 +68,7 @@ class Bike extends Component {
         <h3 className={classes.name}>Vintage Oliva</h3>
         <span className={classes.price}>999$</span>
         <div className={classes.imageContainer}>
-          <img className={classes.image} src={VintageOliva_1} alt="redBike"/>
+          <img className={classes.image} src={bike_1} alt="redBike"/>
         </div>
         <span 
           className={classes.basketContainer}
