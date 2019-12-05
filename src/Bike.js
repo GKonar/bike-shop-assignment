@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/styles';
 
-import bike_1 from './assets/images/bike_1.png';
-import bike_1a from './assets/images/bike_1a.png';
-
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
-
+import BikeDialog from './BikeDialog';
 
 const styles = { 
   bike: {
     position: "relative",
-    minWidth: "300px",
-    height: "350px",
+    width: "250px", // 300px responsive
+    height: "300px", // 350px responsive
     overflow: "hidden",
     backgroundColor: "#FFF",
     display: "flex",
@@ -19,6 +16,7 @@ const styles = {
     alignItems: "center",
     border: "1px solid rgba(0, 0, 0, 0.2)" , 
     margin: "1rem",
+    cursor: "pointer",
     "&:hover $basketContainer": {
       opacity: "1"
     }
@@ -27,7 +25,7 @@ const styles = {
   },
   price: {
     position: "absolute",
-    top: "17%",
+    top: "20%",
     right: "0",
     fontSize: "2rem",
     letterSpacing: "1px",
@@ -38,9 +36,11 @@ const styles = {
   },
   imageContainer: {
     width: "300px"
+
   },
   image: {
-    width: "100%"
+    width: "100%",
+    height: "100%",
   },
   basketContainer: {
     position: "absolute",
@@ -57,25 +57,32 @@ const styles = {
   },
   basketButton: {
     fontSize: "2rem"
-  }
+  }, 
 }
 
 class Bike extends Component {
   render() {
-    const { classes } = this.props;
+    const { name, description, price, images, classes } = this.props
     return (
       <div className={classes.bike}>
-        <h3 className={classes.name}>Vintage Oliva</h3>
-        <span className={classes.price}>999$</span>
+        <h3 className={classes.name}>{name}</h3>
+        <span className={classes.price}>{price}</span>
         <div className={classes.imageContainer}>
-          <img className={classes.image} src={bike_1} alt="redBike"/>
+          <BikeDialog
+            name={ name }
+            description={ description }
+          />
+          <img className={classes.image} src={images[0]} alt="redBike"/>
         </div>
         <span 
           className={classes.basketContainer}
-          onClick={() => console.log('Add')}>
+          onClick={(e) => {
+            e.stopPropagation();
+            alert('add to basket');
+          }}>
           Add &nbsp; 
           <ShoppingBasket 
-          className={classes.basketButton}/>
+            className={classes.basketButton}/>
         </span>
 
       </div>

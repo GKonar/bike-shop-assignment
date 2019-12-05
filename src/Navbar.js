@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
-// import AddShoppingCart from '@material-ui/icons/AddShoppingCart';
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 
 import logo from './assets/images/Logo.png';
@@ -43,7 +42,8 @@ const styles = {
     transition: ".4s",
     "&:hover": {
       transform: "scale(1.1)",
-      color: "#64C29E"
+      color: "#64C29E",
+      cursor: "pointer"
     }
   },
   itemsNumber: {
@@ -77,7 +77,7 @@ class Navbar extends Component {
             <span className={classes.itemsNumber}>{numOfItems}</span>
             <ShoppingBasket 
             className={classes.basket}
-            onClick={() => console.log('Open basket')}/>
+            onClick={() => alert('open basket')}/>
           </div>
         </nav>
       </div>

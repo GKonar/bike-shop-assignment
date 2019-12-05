@@ -21,7 +21,7 @@ const styles = {
     filter: "brightness(150%)"
   },
   productsContainer: {
-    width: "70%",
+    width: "80%",
     margin: "0 auto"
   },
   products: {
@@ -42,12 +42,20 @@ class Shop extends Component {
         <Navbar/>
         <div className={classes.productsContainer}>
           <div className={classes.products}>
-            <Bike />
-            <Bike />
-            <Bike />
-            <Bike />
-            <Bike />
-            <Bike />
+            {
+              bikes.map(bike => {
+                return (
+                  <div>
+                    <Bike 
+                      name={bike.bikeName}
+                      description={bike.description}
+                      price={bike.price}
+                      images={bike.images}
+                    />
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
         
