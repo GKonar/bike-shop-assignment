@@ -53,17 +53,8 @@ const styles = {
 }
 
 class Navbar extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      numOfItems: 0,
-    }
-  }
-
   render() {
-    const { classes } = this.props;
-    const { numOfItems } = this.state
+    const { classes, basketItems } = this.props;
 
     return (
       <div className={classes.navContainer}>
@@ -74,7 +65,7 @@ class Navbar extends Component {
           <Link to="/shop">shop</Link>
           <Link to="/customer">customer</Link>
           <div className={classes.basketContainer}>
-            <span className={classes.itemsNumber}>{numOfItems}</span>
+            <span className={classes.itemsNumber}>{basketItems.length}</span>
             <ShoppingBasket 
             className={classes.basket}
             onClick={() => alert('open basket')}/>

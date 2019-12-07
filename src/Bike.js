@@ -21,8 +21,6 @@ const styles = {
       opacity: "1"
     }
   },
-  name: {
-  },
   price: {
     position: "absolute",
     top: "20%",
@@ -61,8 +59,26 @@ const styles = {
 }
 
 class Bike extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleAddToBasket = this.handleAddToBasket.bind(this);
+  }
+
+  handleAddToBasket(e, bikeName, bikePrice, bikeImages) {
+    const newBike = {
+      name: bikeName,
+      price: bikePrice,
+      images: bikeImages 
+    }
+
+    this.props.addToBasket(newBike)
+    console.log('ADD to basket');
+    e.stopPropagation();
+  }
+
   render() {
-    const { name, description, price, images, classes } = this.props
+    const { name, description, price, images, year, classes } = this.props
     return (
       <div className={classes.bike}>
         <h3 className={classes.name}>{name}</h3>
@@ -71,15 +87,15 @@ class Bike extends Component {
           <BikeDialog
             name={ name }
             description={ description }
+            images={ images }
+            price={ price }
+            year={ year }
           />
-          <img className={classes.image} src={images[0]} alt="redBike"/>
+          <img className={classes.image} src={images[1].img} alt="redBike"/>
         </div>
         <span 
           className={classes.basketContainer}
-          onClick={(e) => {
-            e.stopPropagation();
-            alert('add to basket');
-          }}>
+          onClick={(e) => this.handleAddToBasket(e, name, price, images)}>
           Add &nbsp; 
           <ShoppingBasket 
             className={classes.basketButton}/>

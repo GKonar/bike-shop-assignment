@@ -3,17 +3,42 @@ import { Switch, Route } from 'react-router-dom';
 import WelcomePage from './WelcomePage';
 import Shop from './Shop';
 
+import bikes from './shopProducts';
+
+
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      basketItems: []
+    }
+
+    this.addToBasket = this.addToBasket.bind(this);
+  }
+
+  addToBasket(item) {
+    this.setState({ basketItems: [ ...this.state.basketItems, item ] })
+  }
+
   render() {
+    const { basketItems } = this.state;
+
     return (
       <Switch>
         <Route 
         exact path="/" 
-        render={() => <WelcomePage />}
-        />
+        render={() => 
+          <WelcomePage 
+            basketItems={ basketItems }/>}
+          />
         <Route 
-        exact path="/shop" 
-        render={() => <Shop />}
+          exact path="/shop" 
+          render={() => 
+            <Shop 
+              bikes={ bikes }
+              addToBasket={ this.addToBasket }
+              basketItems={ basketItems }/>}
         />
         {/* will need four different routes */}
       </Switch>

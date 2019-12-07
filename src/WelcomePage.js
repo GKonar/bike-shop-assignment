@@ -57,10 +57,10 @@ const styles = {
 
 class WelcomePage extends Component {
   render() {
-    const { classes } = this.props
+    const { classes, basketItems } = this.props
     return (
       <div className={classes.root}>
-        <Navbar />
+        <Navbar basketItems={basketItems}/>
         <div className={classes.welcomeContainer}>
           <span className={classes.welcomeText}>
             <img src={`${welcomePageTextLogo}`} alt="logo"/>

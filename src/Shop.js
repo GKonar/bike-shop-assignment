@@ -2,14 +2,10 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import { withStyles } from '@material-ui/styles';
 import Bike from './Bike'
-import bikes from './shopProducts';
 
 import backgroundVideo from './assets/video/Cyclist-1.mp4';
 
 const styles = {
-  root: {
-    
-  },
   video: {
     height: "100vh",
     width: '100%',
@@ -33,33 +29,31 @@ const styles = {
 }
 
 class Shop extends Component {
-
   render() {
-    const { classes } = this.props;
-    console.log(bikes);
+    const { classes, bikes, addToBasket, basketItems } = this.props;
     return (
       <div className={classes.root}>
-        <Navbar/>
+        <Navbar basketItems={basketItems}/>
         <div className={classes.productsContainer}>
           <div className={classes.products}>
             {
               bikes.map(bike => {
                 return (
-                  <div>
-                    <Bike 
-                      name={bike.bikeName}
-                      description={bike.description}
-                      price={bike.price}
-                      images={bike.images}
-                    />
-                  </div>
+                  <Bike 
+                    addToBasket={addToBasket}
+                    name={bike.bikeName}
+                    description={bike.description}
+                    price={bike.price}
+                    images={bike.images}
+                    year={bike.year}
+                    key={bike.year}
+                  />
                 )
               })
             }
           </div>
         </div>
-        
-
+        { /* background video */ }
         <div className={classes.video}>
           <video autoPlay loop muted>
             <source src={backgroundVideo} type='video/mp4' />
