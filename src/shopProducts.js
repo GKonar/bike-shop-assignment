@@ -11,7 +11,7 @@ import oliva2 from './assets/images/bike_1a.png'
 // import ceviche2 from './assets/images/bike_5a.png'
 // import praga1 from './assets/images/bike_6.jpeg'
 // import praga2 from './assets/images/bike_6a.png'
-import uuid from 'uuid'
+import uuid from 'uuid';
 
 
 export default [

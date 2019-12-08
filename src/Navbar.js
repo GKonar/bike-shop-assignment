@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
-import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
+import BasketDialog from './BasketDialog';
 
 import logo from './assets/images/Logo.png';
 
@@ -46,10 +46,6 @@ const styles = {
       cursor: "pointer"
     }
   },
-  itemsNumber: {
-    margin: ".2rem",
-    color: "#FFF"
-  }
 }
 
 class Navbar extends Component {
@@ -65,10 +61,7 @@ class Navbar extends Component {
           <Link to="/shop">shop</Link>
           <Link to="/customer">customer</Link>
           <div className={classes.basketContainer}>
-            <span className={classes.itemsNumber}>{basketItems.length}</span>
-            <ShoppingBasket 
-            className={classes.basket}
-            onClick={() => alert('open basket')}/>
+            <BasketDialog basketItems={basketItems}/>
           </div>
         </nav>
       </div>
