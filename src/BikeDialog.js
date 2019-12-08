@@ -133,7 +133,6 @@ class BikeDialog extends React.Component {
 
     this.handleClickOpen = this.handleClickOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
-    this.addToBasket = this.addToBasket.bind(this);
     this.closeImage = this.closeImage.bind(this);
   }
 
@@ -146,10 +145,6 @@ class BikeDialog extends React.Component {
     e.stopPropagation();
     this.setState({ openDialog: false });
   };
-
-  addToBasket() {
-    alert('Item added');
-  }
 
   openImage(id) {
     const currentImage = this.props.images.find(img => img.id === id);
@@ -223,7 +218,10 @@ class BikeDialog extends React.Component {
             <h3 className={classes.price}>Price: { price }</h3>
           </DialogContent>
           <DialogActions>
-            <Button className={classes.button} onClick={this.addToBasket} color="primary">
+            <Button 
+              className={classes.button} 
+              onClick={(e) => this.props.addToBasket(e, name, price, images)} 
+              color="primary">
               <AddShoppingCart className={classes.addToCartIcon}/>
             </Button>
           </DialogActions>
