@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/styles';
+import uuid from 'uuid';
 
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 import BikeDialog from './BikeDialog';
@@ -69,7 +70,8 @@ class Bike extends Component {
     const newBike = {
       name: bikeName,
       price: bikePrice,
-      images: bikeImages 
+      images: bikeImages,
+      id: uuid()
     }
 
     this.props.addToBasket(newBike)
@@ -90,6 +92,7 @@ class Bike extends Component {
             images={ images }
             price={ price }
             year={ year }
+            addToBasket={ this.handleAddToBasket }
           />
           <img className={classes.image} src={images[1].img} alt="redBike"/>
         </div>
