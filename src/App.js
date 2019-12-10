@@ -3,7 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import WelcomePage from './WelcomePage';
 import Shop from './Shop';
 
-import bikes from './shopProducts';
+import requests from './Requests';
+// import bikes from './shopProducts';
 
 
 export default class App extends Component {
@@ -11,7 +12,8 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      basketItems: []
+      basketItems: [],
+      bikes: []
     }
 
     this.addToBasket = this.addToBasket.bind(this);
@@ -24,11 +26,11 @@ export default class App extends Component {
   }
 
   addToBasket(item) {
-    this.setState({ basketItems: [ ...this.state.basketItems, item ] })
+    this.setState({ basketItems: [ ...this.state.basketItems, item ] });
   }
 
   render() {
-    const { basketItems } = this.state;
+    const { basketItems, bikes } = this.state;
 
     return (
       <Switch>
