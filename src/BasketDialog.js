@@ -8,7 +8,6 @@ import Divider from '@material-ui/core/Divider';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import withMobileDialog from '@material-ui/core/withMobileDialog';
 import { withStyles } from '@material-ui/styles';
-import shopProducts from './shopProducts';
 
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 
@@ -108,23 +107,30 @@ class ResponsiveDialog extends React.Component {
           <Divider />
           <DialogContent>
           {/* For development */}
-          <div className={classes.basketItem}>
-            <div className={classes.itemWrapper}>
-              <div className={classes.itemImageContainer}>
-                <img className={classes.itemImage} src={shopProducts[0].images[1].img} alt="itemImage"/>
-              </div>
-              <h4 className={classes.itemName}>
-                Vintage Oliva
-              </h4>
-            </div>
-           
-            <span className={classes.numOfItems}> Pcs. 1</span>
-            
-          </div>
           {
-            // <h3 className={classes.noItems}>
-            // You do not have any items
-            // </h3>
+            basketItems.length > 0 ? (
+            basketItems.map((item => {
+              console.log(item);
+              return (
+                <div 
+                  className={classes.basketItem}
+                  key={item.id}>
+                  <div className={classes.itemWrapper}>
+                    <div className={classes.itemImageContainer}>
+                      <img className={classes.itemImage} src={item.images[1].src} alt="itemImage"/>
+                    </div>
+                    <h4 className={classes.itemName}>
+                      {item.name}
+                    </h4>
+                  </div>
+                  <span className={classes.numOfItems}> Pcs. 1</span>
+                </div>
+              )
+            }))) : (
+              <h3 className={classes.noItems}>
+                You do not have any items
+              </h3>
+            )
           }
           </DialogContent>
           <DialogActions>
