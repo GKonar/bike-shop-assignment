@@ -81,6 +81,7 @@ class Bike extends Component {
 
   render() {
     const { name, description, price, images, year, classes } = this.props
+    console.log(images);
     return (
       <div className={classes.bike}>
         <h3 className={classes.name}>{name}</h3>
@@ -94,7 +95,10 @@ class Bike extends Component {
             year={ year }
             addToBasket={ this.handleAddToBasket }
           />
-          <img className={classes.image} src={images[1].img} alt="redBike"/>
+          <img 
+            className={classes.image} 
+            src={images[0].src} 
+            alt="redBike"/>
         </div>
         <span 
           className={classes.basketContainer}

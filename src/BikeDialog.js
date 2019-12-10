@@ -105,7 +105,7 @@ const styles = {
   },
   addToCartIcon: {
     fontSize: "2rem",
-    color: "#000",
+    color: "#fff",
     transition: ".3s",
     zIndex: 102,
     "&:hover": {
@@ -150,7 +150,7 @@ class BikeDialog extends React.Component {
     const currentImage = this.props.images.find(img => img.id === id);
     this.setState({
       zoomImage: true,
-      currentImage: currentImage.img
+      currentImage: currentImage.src
     })
   }
 
@@ -194,7 +194,7 @@ class BikeDialog extends React.Component {
                       className={classes.imageContainer}>
                       <img 
                         className={classes.image} 
-                        src={img.img}
+                        src={img.src}
                         alt="bike" 
                         onClick={() => this.openImage(img.id)}
                       />
