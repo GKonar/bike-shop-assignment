@@ -22,7 +22,6 @@ export default class App extends Component {
   async componentDidMount() {
     const fetchedBikes = await requests.getBikes();
     this.setState({ bikes: fetchedBikes });
-    console.log('BIKES: ',fetchedBikes);
   }
 
   addToBasket(item) {

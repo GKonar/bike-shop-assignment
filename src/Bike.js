@@ -81,7 +81,6 @@ class Bike extends Component {
 
   render() {
     const { name, description, price, images, year, classes } = this.props
-    console.log(images);
     return (
       <div className={classes.bike}>
         <h3 className={classes.name}>{name}</h3>

@@ -71,7 +71,7 @@ class ResponsiveDialog extends React.Component {
     super(props);
 
     this.state = {
-      open: true,
+      open: false,
     };
 
     this.handleClickOpen = this.handleClickOpen.bind(this);
@@ -126,8 +126,6 @@ class ResponsiveDialog extends React.Component {
             // You do not have any items
             // </h3>
           }
-         
-
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose}>
