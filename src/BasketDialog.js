@@ -13,6 +13,10 @@ import shopProducts from './shopProducts';
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 
 const styles = {
+  basketHeader: {
+    backgroundColor:  "rgba(0, 0, 0, 0.8)",
+    color: "#fff"
+  },
   basket: {
     fontSize: "2.5rem",
     transition: ".4s",
@@ -40,9 +44,13 @@ const styles = {
     alignItems: "center",
     justifyContent: "space-between"
   },
+  itemWrapper: {
+    display: "flex"
+  },
   itemImageContainer: {
     width: "50px",
-    height: "50px"
+    height: "50px",
+    marginRight: "1rem"
   },
   itemImage: {
     width: "100%"
@@ -52,6 +60,9 @@ const styles = {
   }, 
   numOfItems: {
 
+  }, 
+  noItems: {
+    width: "400px"
   }
 }
 
@@ -60,7 +71,7 @@ class ResponsiveDialog extends React.Component {
     super(props);
 
     this.state = {
-      open: false,
+      open: true,
     };
 
     this.handleClickOpen = this.handleClickOpen.bind(this);
@@ -93,23 +104,33 @@ class ResponsiveDialog extends React.Component {
           onClose={this.handleClose}
           aria-labelledby="responsive-dialog-title"
         >
-          <DialogTitle id="responsive-dialog-title">{"Your Basket"}</DialogTitle>
+          <DialogTitle className={classes.basketHeader} id="responsive-dialog-title">{"Your Basket"}</DialogTitle>
           <Divider />
           <DialogContent>
           {/* For development */}
           <div className={classes.basketItem}>
-            <div className={classes.itemImageContainer}>
-              <img className={classes.itemImage} src={shopProducts[0].images[1].img} alt="itemImage"/>
+            <div className={classes.itemWrapper}>
+              <div className={classes.itemImageContainer}>
+                <img className={classes.itemImage} src={shopProducts[0].images[1].img} alt="itemImage"/>
+              </div>
+              <h4 className={classes.itemName}>
+                Vintage Oliva
+              </h4>
             </div>
-            <p className={classes.itemName}>
-              Vintage Oliva
-            </p>
+           
             <span className={classes.numOfItems}> Pcs. 1</span>
+            
           </div>
+          {
+            // <h3 className={classes.noItems}>
+            // You do not have any items
+            // </h3>
+          }
+         
 
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={this.handleClose}>
               Close
             </Button>
           </DialogActions>
