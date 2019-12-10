@@ -1,0 +1,107 @@
+{
+  "bikes" :[
+    {
+      "bikeName": "Vintage Oliva",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti blanditiis eius labore ad placeat atque. Magni reprehenderit iusto nesciunt porro rem. Veritatis beatae nobis cumque dolor velit, aut amet",
+      "price": "999$",
+      "year": 1988,
+      "id": 1,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/dee8cfqkb/image/upload/v1575984525/bike_1a_ymoxrp.png",
+          "id": "1a"
+        },
+        {
+          "src": "https://res.cloudinary.com/dee8cfqkb/image/upload/v1575984525/bike_1_i25der.png",
+          "id": "1b"
+        } 
+      ]    
+
+    },
+    {
+      "bikeName": "La Boriosa",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti blanditiis eius labore ad placeat atque. Magni reprehenderit iusto nesciunt porro rem. Veritatis beatae nobis cumque dolor velit, aut amet",
+      "price": "1009$",
+      "year": 1960,
+      "id": 2,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/dee8cfqkb/image/upload/v1575984525/bike_1a_ymoxrp.png",
+          "id": "2a"
+        },
+        {
+          "src": "https://res.cloudinary.com/dee8cfqkb/image/upload/v1575984525/bike_1_i25der.png",
+          "id": "2b"
+        } 
+      ]    
+    },
+    {
+      "bikeName": "M. Hulot",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti blanditiis eius labore ad placeat atque. Magni reprehenderit iusto nesciunt porro rem. Veritatis beatae nobis cumque dolor velit, aut amet",
+      "price": "1299$",
+      "year": 1972,
+      "id": 3,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/dee8cfqkb/image/upload/v1575984525/bike_1a_ymoxrp.png",
+          "id": "3a"
+        },
+        {
+          "src": "https://res.cloudinary.com/dee8cfqkb/image/upload/v1575984525/bike_1_i25der.png",
+          "id": "3b"
+        } 
+      ]    
+    },
+    {
+      "bikeName": "Pelagio Bagio",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti blanditiis eius labore ad placeat atque. Magni reprehenderit iusto nesciunt porro rem. Veritatis beatae nobis cumque dolor velit, aut amet",
+      "price": "799$",
+      "year": 1986,
+      "id": 4,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/dee8cfqkb/image/upload/v1575984525/bike_1a_ymoxrp.png",
+          "id": "4a"
+        },
+        {
+          "src": "https://res.cloudinary.com/dee8cfqkb/image/upload/v1575984525/bike_1_i25der.png",
+          "id": "4b"
+        } 
+      ]    
+    },
+    {
+      "bikeName": "Dragio Ceviche",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti blanditiis eius labore ad placeat atque. Magni reprehenderit iusto nesciunt porro rem. Veritatis beatae nobis cumque dolor velit, aut amet",
+      "price": "899$",
+      "year": 1975,
+      "id": 5,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/dee8cfqkb/image/upload/v1575984525/bike_1a_ymoxrp.png",
+          "id": "5a"
+        },
+        {
+          "src": "https://res.cloudinary.com/dee8cfqkb/image/upload/v1575984525/bike_1_i25der.png",
+          "id": "5b"
+        } 
+      ]    
+    },
+    {
+      "bikeName": "Romet Praga",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti blanditiis eius labore ad placeat atque. Magni reprehenderit iusto nesciunt porro rem. Veritatis beatae nobis cumque dolor velit, aut amet",
+      "price": "1699$",
+      "year": 1953,
+      "id": 6,
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/dee8cfqkb/image/upload/v1575984525/bike_1a_ymoxrp.png",
+          "id": "6a"
+        },
+        {
+          "src": "https://res.cloudinary.com/dee8cfqkb/image/upload/v1575984525/bike_1_i25der.png",
+          "id": "6b"
+        } 
+      ]    
+    }
+  ]
+}
