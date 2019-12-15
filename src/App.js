@@ -28,6 +28,8 @@ export default class App extends Component {
     this.setState({ basketItems: [ ...this.state.basketItems, item ] });
   }
 
+  // checkForDuplicate() 
+
   render() {
     const { basketItems, bikes } = this.state;
 

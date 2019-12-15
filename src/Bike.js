@@ -75,7 +75,6 @@ class Bike extends Component {
     }
 
     this.props.addToBasket(newBike)
-    console.log('ADD to basket');
     e.stopPropagation();
   }
 

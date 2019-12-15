@@ -77,7 +77,6 @@ class ResponsiveDialog extends React.Component {
     this.handleClose = this.handleClose.bind(this);
   }
   
-
   handleClickOpen() {
     this.setState({ open: true });
   };
@@ -110,7 +109,7 @@ class ResponsiveDialog extends React.Component {
           {
             basketItems.length > 0 ? (
             basketItems.map((item => {
-              console.log(item);
+              // console.log(item); // DEV
               return (
                 <div 
                   className={classes.basketItem}
@@ -123,7 +122,7 @@ class ResponsiveDialog extends React.Component {
                       {item.name}
                     </h4>
                   </div>
-                  <span className={classes.numOfItems}> Pcs. 1</span>
+                  <span className={classes.numOfItems}> Pcs. {item.amount}</span>
                 </div>
               )
             }))) : (
