@@ -71,7 +71,9 @@ class Bike extends Component {
       name: bikeName,
       price: bikePrice,
       images: bikeImages,
-      id: uuid()
+      id: uuid(),
+      // add Number
+      amount: 0
     }
 
     this.props.addToBasket(newBike)
