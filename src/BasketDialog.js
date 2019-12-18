@@ -105,7 +105,6 @@ class ResponsiveDialog extends React.Component {
           <DialogTitle className={classes.basketHeader} id="responsive-dialog-title">{"Your Basket"}</DialogTitle>
           <Divider />
           <DialogContent>
-          {/* For development */}
           {
             basketItems.length > 0 ? (
             basketItems.map((item => {
