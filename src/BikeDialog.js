@@ -164,7 +164,7 @@ class BikeDialog extends React.Component {
   }
 
   render() {
-    const { classes, name, description, images, price, year } = this.props;
+    const { classes, name, description, images, price, year, id } = this.props;
     const { currentImage, openDialog, zoomImage } = this.state;
   
     return (
@@ -220,7 +220,7 @@ class BikeDialog extends React.Component {
           <DialogActions>
             <Button 
               className={classes.button} 
-              onClick={(e) => this.props.addToBasket(e, name, price, images)} 
+              onClick={(e) => this.props.addToBasket(e, name, price, images, id)} 
               color="primary">
               <AddShoppingCart className={classes.addToCartIcon}/>
             </Button>

@@ -3,6 +3,8 @@ import Navbar from './Navbar';
 import { withStyles } from '@material-ui/styles';
 import Bike from './Bike'
 
+import uuid from 'uuid';
+
 import backgroundVideo from './assets/video/Cyclist-1.mp4';
 
 const styles = {
@@ -45,8 +47,9 @@ class Shop extends Component {
                     description={bike.description}
                     price={bike.price}
                     images={bike.images}
+                    id={bike.id}
                     year={bike.year}
-                    key={bike.year}
+                    key={ uuid() }
                   />
                 )
               })

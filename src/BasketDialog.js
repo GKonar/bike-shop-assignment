@@ -10,6 +10,7 @@ import withMobileDialog from '@material-ui/core/withMobileDialog';
 import { withStyles } from '@material-ui/styles';
 
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
+import uuid from 'uuid';
 
 const styles = {
   basketHeader: {
@@ -108,11 +109,10 @@ class ResponsiveDialog extends React.Component {
           {
             basketItems.length > 0 ? (
             basketItems.map((item => {
-              // console.log(item); // DEV
               return (
                 <div 
                   className={classes.basketItem}
-                  key={item.id}>
+                  key={ uuid() }>
                   <div className={classes.itemWrapper}>
                     <div className={classes.itemImageContainer}>
                       <img className={classes.itemImage} src={item.images[1].src} alt="itemImage"/>

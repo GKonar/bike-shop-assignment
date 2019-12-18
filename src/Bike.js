@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/styles';
-import uuid from 'uuid';
 
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 import BikeDialog from './BikeDialog';
@@ -66,13 +65,12 @@ class Bike extends Component {
     this.handleAddToBasket = this.handleAddToBasket.bind(this);
   }
 
-  handleAddToBasket(e, bikeName, bikePrice, bikeImages) {
+  handleAddToBasket(e, bikeName, bikePrice, bikeImages, bikeId) {
     const newBike = {
       name: bikeName,
       price: bikePrice,
       images: bikeImages,
-      id: uuid(),
-      
+      id: bikeId,
       // add Number
       amount: 1
     }
@@ -82,7 +80,7 @@ class Bike extends Component {
   }
 
   render() {
-    const { name, description, price, images, year, classes } = this.props
+    const { name, description, price, images, year, id, classes } = this.props
     return (
       <div className={classes.bike}>
         <h3 className={classes.name}>{name}</h3>
@@ -94,6 +92,7 @@ class Bike extends Component {
             images={ images }
             price={ price }
             year={ year }
+            id={ id }
             addToBasket={ this.handleAddToBasket }
           />
           <img 
@@ -103,7 +102,7 @@ class Bike extends Component {
         </div>
         <span 
           className={classes.basketContainer}
-          onClick={(e) => this.handleAddToBasket(e, name, price, images)}>
+          onClick={(e) => this.handleAddToBasket(e, name, price, images, id)}>
           Add &nbsp; 
           <ShoppingBasket 
             className={classes.basketButton}/>

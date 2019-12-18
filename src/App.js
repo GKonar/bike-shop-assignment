@@ -25,10 +25,28 @@ export default class App extends Component {
   }
 
   addToBasket(item) {
-    this.setState({ basketItems: [ ...this.state.basketItems, item ] });
+    let includes;
+    this.state.basketItems.forEach(i => {
+      if(item.name === i.name) {
+        includes = true;
+      } else {
+        includes = false;
+      }      
+    })
+    
+    if(!includes) {
+      this.setState({ basketItems: [ ...this.state.basketItems, item ] });
+    } else {
+      let newBasket = this.state.basketItems.map(i => {
+        let amount = item.amount;
+        if(i.id === item.id) {
+          return {...item, amount: amount + 1}       
+        }
+        return item;
+      })
+      this.setState({ basketItems: newBasket });
+    }
   }
-
-  // checkForDuplicate() 
 
   render() {
     const { basketItems, bikes } = this.state;
