@@ -164,7 +164,7 @@ class BikeDialog extends React.Component {
   }
 
   render() {
-    const { classes, name, description, images, price, year, id } = this.props;
+    const { classes, bike } = this.props;
     const { currentImage, openDialog, zoomImage } = this.state;
   
     return (
@@ -182,12 +182,12 @@ class BikeDialog extends React.Component {
           // open={ true } // DEV
         >
           <DialogTitle id="customized-dialog-title" onClose={this.handleClose}>
-            { name }
+            { bike.name }
           </DialogTitle>
           <DialogContent className={ classes.dialogContent}>
             <div className={classes.imagesContainer}>
               {
-                images.map(img => {
+                bike.images.map(img => {
                   return (
                     <div
                       key={img.id} 
@@ -211,16 +211,16 @@ class BikeDialog extends React.Component {
                 })
               }
             </div>
-            <h3 className={classes.name}>{ name }, first unit: { year } </h3>
+            <h3 className={classes.name}>{ bike.name }, first unit: { bike.year } </h3>
             <Typography gutterBottom> 
-              { description }
+              { bike.description }
             </Typography>
-            <h3 className={classes.price}>Price: { price }</h3>
+            <h3 className={classes.price}>Price: { bike.price }</h3>
           </DialogContent>
           <DialogActions>
             <Button 
               className={classes.button} 
-              onClick={(e) => this.props.addToBasket(e, name, price, images, id)} 
+              onClick={(e) => this.props.addToBasket(e, bike)} 
               color="primary">
               <AddShoppingCart className={classes.addToCartIcon}/>
             </Button>

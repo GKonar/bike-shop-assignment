@@ -118,7 +118,7 @@ class ResponsiveDialog extends React.Component {
                       <img className={classes.itemImage} src={item.images[1].src} alt="itemImage"/>
                     </div>
                     <h4 className={classes.itemName}>
-                      {item.name}
+                      {item.bikeName}
                     </h4>
                   </div>
                   <span className={classes.numOfItems}> Pcs. {item.amount}</span>

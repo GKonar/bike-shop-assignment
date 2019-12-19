@@ -42,13 +42,8 @@ class Shop extends Component {
               bikes.map(bike => {
                 return (
                   <Bike 
-                    addToBasket={addToBasket}
-                    name={bike.bikeName}
-                    description={bike.description}
-                    price={bike.price}
-                    images={bike.images}
-                    id={bike.id}
-                    year={bike.year}
+                    addToBasket={ addToBasket }
+                    bike={bike}
                     key={ uuid() }
                   />
                 )
