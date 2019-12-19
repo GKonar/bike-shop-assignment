@@ -25,8 +25,22 @@ export default class App extends Component {
 
   addToBasket(item) {
     const { basketItems } = this.state;
+    let newItem = {
+      ...item,
+      amount: 1,
+    }
 
-    this.setState({basketItems: [...basketItems, item]});
+    if(basketItems.length === 0 ) {
+      this.setState({ basketItems: [...basketItems, newItem] });
+    } else {
+      const updatedItems = basketItems.map(i => {
+        if (i.id === newItem.id) {
+          return { ...i, amount: i.amount + 1 };
+        }
+        return newItem;
+      });
+      this.setState({ basketItems: updatedItems });
+    }
   }
 
   render() {
