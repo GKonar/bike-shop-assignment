@@ -147,7 +147,7 @@ class BikeDialog extends React.Component {
   };
 
   openImage(id) {
-    const currentImage = this.props.images.find(img => img.id === id);
+    const currentImage = this.props.bike.images.find(img => img.id === id);
     this.setState({
       zoomImage: true,
       currentImage: currentImage.src
@@ -182,7 +182,7 @@ class BikeDialog extends React.Component {
           // open={ true } // DEV
         >
           <DialogTitle id="customized-dialog-title" onClose={this.handleClose}>
-            { bike.name }
+            { bike.bikeName }
           </DialogTitle>
           <DialogContent className={ classes.dialogContent}>
             <div className={classes.imagesContainer}>
@@ -211,7 +211,7 @@ class BikeDialog extends React.Component {
                 })
               }
             </div>
-            <h3 className={classes.name}>{ bike.name }, first unit: { bike.year } </h3>
+            <h3 className={classes.name}>{ bike.bikeName }, first unit: { bike.year } </h3>
             <Typography gutterBottom> 
               { bike.description }
             </Typography>

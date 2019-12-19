@@ -74,7 +74,7 @@ class Bike extends Component {
     const { bike, classes } = this.props
     return (
       <div className={classes.bike}>
-        <h3 className={classes.name}>{bike.name}</h3>
+        <h3 className={classes.name}>{bike.bikeName}</h3>
         <span className={classes.price}>{bike.price}</span>
         <div className={classes.imageContainer}>
           <BikeDialog
