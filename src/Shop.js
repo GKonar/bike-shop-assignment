@@ -2,33 +2,10 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import { withStyles } from '@material-ui/styles';
 import Bike from './Bike'
-
 import uuid from 'uuid';
 
 import backgroundVideo from './assets/video/Cyclist-1.mp4';
-
-const styles = {
-  video: {
-    height: "100vh",
-    width: '100%',
-    position: "fixed",
-    top: "0",
-    left: "0",
-    overflow: "hidden",
-    zIndex: "-1",
-    filter: "brightness(150%)"
-  },
-  productsContainer: {
-    width: "80%",
-    margin: "0 auto"
-  },
-  products: {
-    display: "flex",
-    justifyContent: "center",
-    flexWrap: "wrap",
-    margin: "0 auto"
-  }
-}
+import styles from './styles/ShopStyles';
 
 class Shop extends Component {
   render() {
