@@ -12,6 +12,7 @@ import { withStyles } from '@material-ui/styles';
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 import uuid from 'uuid';
 
+import RemoveShoppingCart from '@material-ui/icons/RemoveShoppingCart';
 import styles from './styles/BasketDialogStyles';
 
 class ResponsiveDialog extends React.Component {
@@ -35,7 +36,7 @@ class ResponsiveDialog extends React.Component {
   };
 
   render() {
-    const { fullScreen, classes, basketItems } = this.props;
+    const { fullScreen, classes, basketItems, removeFromBasket } = this.props;
     console.log('In Dialog: ', basketItems);
     return (
       <div>
@@ -69,7 +70,10 @@ class ResponsiveDialog extends React.Component {
                       {item.bikeName}
                     </h4>
                   </div>
-                  <span className={classes.numOfItems}> Pcs. {item.amount}</span>
+                  
+                  <Button className={classes.basketOpenButton} onClick={removeFromBasket}>
+                    <RemoveShoppingCart />
+                  </Button>
                 </div>
               )
             }))) : (

@@ -8,7 +8,7 @@ import styles from './styles/NavbarStyles';
 
 class Navbar extends Component {
   render() {
-    const { classes, basketItems } = this.props;
+    const { classes, basketItems, removeFromBasket } = this.props;
 
     return (
       <div className={classes.navContainer}>
@@ -19,7 +19,9 @@ class Navbar extends Component {
           <Link to="/shop">shop</Link>
           <Link to="/customer">customer</Link>
           <div className={classes.basketContainer}>
-            <BasketDialog basketItems={basketItems}/>
+            <BasketDialog 
+              basketItems={basketItems}
+              removeFromBasket={removeFromBasket}/>
           </div>
         </nav>
       </div>

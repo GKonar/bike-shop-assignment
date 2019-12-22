@@ -10,10 +10,12 @@ import welcomePageTextLogo from './assets/images/Icon.png';
 import styles from './styles/WelcomePageStyles';
 class WelcomePage extends Component {
   render() {
-    const { classes, basketItems } = this.props
+    const { classes, basketItems, removeFromBasket } = this.props;
     return (
       <div className={classes.root}>
-        <Navbar basketItems={basketItems}/>
+        <Navbar 
+          basketItems={basketItems}
+          removeFromBasket={removeFromBasket}/>
         <div className={classes.welcomeContainer}>
           <span className={classes.welcomeText}>
             <img src={`${welcomePageTextLogo}`} alt="logo"/>

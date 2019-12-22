@@ -5,7 +5,6 @@ import Shop from './Shop';
 
 import requests from './Requests';
 
-
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +15,7 @@ export default class App extends Component {
     }
 
     this.addToBasket = this.addToBasket.bind(this);
+    this.removeFromBasket = this.removeFromBasket.bind(this);
   }
 
   async componentDidMount() {
@@ -29,18 +29,25 @@ export default class App extends Component {
       ...item,
       amount: 1,
     }
+    
+    this.setState({ basketItems: [...basketItems, newItem] });
+    
+    // if( basketItems.length === 0 ) {
+    //   this.setState({ basketItems: [ ...basketItems, newItem ] });
+    // } else {
+    //   const updatedItems = basketItems.map(i => {
+    //     if (i.id === newItem.id) {
+    //       return { ...i, amount: i.amount + 1 };
+    //     }
+    //     console.log('outside');
+    //     return newItem;
+    //   });
+    //   this.setState({ basketItems: updatedItems });
+    // }
+  }
 
-    if(basketItems.length === 0 ) {
-      this.setState({ basketItems: [...basketItems, newItem] });
-    } else {
-      const updatedItems = basketItems.map(i => {
-        if (i.id === newItem.id) {
-          return { ...i, amount: i.amount + 1 };
-        }
-        return newItem;
-      });
-      this.setState({ basketItems: updatedItems });
-    }
+  removeFromBasket(itemId) {
+    console.log('yay hellos');
   }
 
   render() {
@@ -52,7 +59,9 @@ export default class App extends Component {
         exact path="/" 
         render={() => 
           <WelcomePage 
-            basketItems={ basketItems }/>}
+            basketItems={ basketItems }
+            removeFromBasket={ this.removeFromBasket }
+            />}
           />
         <Route 
           exact path="/shop" 
@@ -60,7 +69,8 @@ export default class App extends Component {
             <Shop 
               bikes={ bikes }
               addToBasket={ this.addToBasket }
-              basketItems={ basketItems }/>}
+              basketItems={ basketItems }
+              removeFromBasket={ this.removeFromBasket }/>}
         />
         {/* will need four different routes */}
       </Switch>
