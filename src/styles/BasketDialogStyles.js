@@ -44,10 +44,25 @@ export default  {
   itemName: {
 
   }, 
-  numOfItems: {
+  basketInfo: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  quantity: {
 
   }, 
+  total: {
+    display: "flex",
+    alignItems: "center",
+    marginLeft: "1.5rem"
+  },
+  removeItemButton: {
+    minWidth: "40px;",
+    minHeight: "40px;",
+    borderRadius: "50%",
+  },
   noItems: {
     width: "400px"
-  }
+  },
 }
