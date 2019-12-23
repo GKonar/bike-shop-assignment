@@ -47,7 +47,10 @@ export default class App extends Component {
   }
 
   removeFromBasket(itemId) {
-    console.log('yay hellos');
+    const { basketItems } = this.state;
+    const updatedBasket = basketItems.filter(item => item.id !== itemId)
+
+    this.setState({ basketItems: updatedBasket });
   }
 
   render() {

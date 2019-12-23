@@ -71,7 +71,7 @@ class ResponsiveDialog extends React.Component {
                     </h4>
                   </div>
                   
-                  <Button className={classes.basketOpenButton} onClick={removeFromBasket}>
+                  <Button className={classes.basketOpenButton} onClick={() => removeFromBasket(item.id)}>
                     <RemoveShoppingCart />
                   </Button>
                 </div>
