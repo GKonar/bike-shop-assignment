@@ -9,12 +9,12 @@ import styles from './styles/ShopStyles';
 
 class Shop extends Component {
   render() {
-    const { classes, bikes, addToBasket, basketItems, removeFromBasket } = this.props;
+    const { classes, bikes, addToBasket, basketItems, removeFromBasket, basketTotal } = this.props;
     return (
       <div className={classes.root}>
         <Navbar 
           basketItems={basketItems}
-          removeFromBasket={removeFromBasket}/>
+          removeFromBasket={removeFromBasket}
         <div className={classes.productsContainer}>
           <div className={classes.products}>
             {

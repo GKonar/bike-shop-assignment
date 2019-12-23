@@ -53,13 +53,17 @@ export default class App extends Component {
 
   removeFromBasket(itemId) {
     const { basketItems } = this.state;
-    const updatedBasket = basketItems.filter(item => item.id !== itemId)
-
-    this.setState({ basketItems: updatedBasket });
+    const updatedBasket = basketItems.filter(item => item.id !== itemId);
+    let removedItem = basketItems.find(item => item.id === itemId);
+    
+    this.setState((state) => ({
+      basketItems: updatedBasket,
+      basketTotal: state.basketTotal - (removedItem.price * removedItem.quantity)
+    }));
   }
 
   render() {
-    const { basketItems, bikes } = this.state;
+    const { basketItems, bikes, basketTotal } = this.state;
 
     return (
       <Switch>
@@ -78,7 +82,7 @@ export default class App extends Component {
               bikes={ bikes }
               addToBasket={ this.addToBasket }
               basketItems={ basketItems }
-              removeFromBasket={ this.removeFromBasket }/>}
+              removeFromBasket={ this.removeFromBasket }
         />
         {/* will need four different routes */}
       </Switch>

@@ -36,7 +36,7 @@ class ResponsiveDialog extends React.Component {
   };
 
   render() {
-    const { fullScreen, classes, basketItems, removeFromBasket } = this.props;
+    const { fullScreen, classes, basketItems, removeFromBasket, basketTotal } = this.props;
     console.log('In Dialog: ', basketItems);
     return (
       <div>
@@ -70,10 +70,9 @@ class ResponsiveDialog extends React.Component {
                       {item.bikeName}
                     </h4>
                   </div>
-                  
-                  <Button className={classes.basketOpenButton} onClick={() => removeFromBasket(item.id)}>
-                    <RemoveShoppingCart />
-                  </Button>
+                    <Button className={classes.removeItemButton} onClick={() => removeFromBasket(item.id)}>
+                      <RemoveShoppingCart />
+                    </Button>
                 </div>
               )
             }))) : (
