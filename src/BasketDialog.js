@@ -70,9 +70,12 @@ class ResponsiveDialog extends React.Component {
                       {item.bikeName}
                     </h4>
                   </div>
+                  <div className={classes.basketInfo}>
+                    <span className={classes.quantity}>Qty: {item.quantity}</span>
                     <Button className={classes.removeItemButton} onClick={() => removeFromBasket(item.id)}>
                       <RemoveShoppingCart />
                     </Button>
+                  </div>
                 </div>
               )
             }))) : (
@@ -82,7 +85,10 @@ class ResponsiveDialog extends React.Component {
             )
           }
           </DialogContent>
-          <DialogActions>
+          <Divider />
+            <h3 className={classes.total}> Total: {`${basketTotal} $`} </h3>
+          <Divider />
+          <DialogActions className={classes.basketFooter}>
             <Button onClick={this.handleClose}>
               Close
             </Button>

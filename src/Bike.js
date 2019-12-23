@@ -23,7 +23,7 @@ class Bike extends Component {
     return (
       <div className={classes.bike}>
         <h3 className={classes.name}>{bike.bikeName}</h3>
-        <span className={classes.price}>{bike.price}</span>
+        <span className={classes.price}>{`${bike.price}$`} </span>
         <div className={classes.imageContainer}>
           <BikeDialog
             bike={ bike }

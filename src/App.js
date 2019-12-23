@@ -11,7 +11,8 @@ export default class App extends Component {
 
     this.state = {
       basketItems: [],
-      bikes: []
+      basketTotal: 0,
+      bikes: [], 
     }
 
     this.addToBasket = this.addToBasket.bind(this);
@@ -73,6 +74,7 @@ export default class App extends Component {
           <WelcomePage 
             basketItems={ basketItems }
             removeFromBasket={ this.removeFromBasket }
+            basketTotal={ basketTotal }
             />}
           />
         <Route 
@@ -83,6 +85,8 @@ export default class App extends Component {
               addToBasket={ this.addToBasket }
               basketItems={ basketItems }
               removeFromBasket={ this.removeFromBasket }
+              basketTotal={ basketTotal } 
+              />}
         />
         {/* will need four different routes */}
       </Switch>

@@ -22,6 +22,8 @@ class Navbar extends Component {
             <BasketDialog 
               basketItems={basketItems}
               removeFromBasket={removeFromBasket}
+              basketTotal={basketTotal}
+              />
           </div>
         </nav>
       </div>

@@ -16,6 +16,7 @@ class WelcomePage extends Component {
         <Navbar 
           basketItems={basketItems}
           removeFromBasket={removeFromBasket}
+          basketTotal={basketTotal}/>
         <div className={classes.welcomeContainer}>
           <span className={classes.welcomeText}>
             <img src={`${welcomePageTextLogo}`} alt="logo"/>

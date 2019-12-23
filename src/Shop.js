@@ -15,6 +15,7 @@ class Shop extends Component {
         <Navbar 
           basketItems={basketItems}
           removeFromBasket={removeFromBasket}
+          basketTotal={basketTotal}/>
         <div className={classes.productsContainer}>
           <div className={classes.products}>
             {
