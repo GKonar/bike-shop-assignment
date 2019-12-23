@@ -3,7 +3,7 @@
     {
       "bikeName": "Vintage Oliva",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti blanditiis eius labore ad placeat atque. Magni reprehenderit iusto nesciunt porro rem. Veritatis beatae nobis cumque dolor velit, aut amet",
-      "price": "999$",
+      "price": 999,
       "year": 1988,
       "id": 1,
       "images": [
@@ -21,7 +21,7 @@
     {
       "bikeName": "La Boriosa",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti blanditiis eius labore ad placeat atque. Magni reprehenderit iusto nesciunt porro rem. Veritatis beatae nobis cumque dolor velit, aut amet",
-      "price": "1009$",
+      "price": 1009,
       "year": 1960,
       "id": 2,
       "images": [
@@ -38,7 +38,7 @@
     {
       "bikeName": "M. Hulot",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti blanditiis eius labore ad placeat atque. Magni reprehenderit iusto nesciunt porro rem. Veritatis beatae nobis cumque dolor velit, aut amet",
-      "price": "1299$",
+      "price": 1299,
       "year": 1972,
       "id": 3,
       "images": [
@@ -55,7 +55,7 @@
     {
       "bikeName": "Pelagio Bagio",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti blanditiis eius labore ad placeat atque. Magni reprehenderit iusto nesciunt porro rem. Veritatis beatae nobis cumque dolor velit, aut amet",
-      "price": "799$",
+      "price": 799,
       "year": 1986,
       "id": 4,
       "images": [
@@ -72,7 +72,7 @@
     {
       "bikeName": "Dragio Ceviche",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti blanditiis eius labore ad placeat atque. Magni reprehenderit iusto nesciunt porro rem. Veritatis beatae nobis cumque dolor velit, aut amet",
-      "price": "899$",
+      "price": 899,
       "year": 1975,
       "id": 5,
       "images": [
@@ -89,7 +89,7 @@
     {
       "bikeName": "Romet Praga",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti blanditiis eius labore ad placeat atque. Magni reprehenderit iusto nesciunt porro rem. Veritatis beatae nobis cumque dolor velit, aut amet",
-      "price": "1699$",
+      "price": 1699,
       "year": 1953,
       "id": 6,
       "images": [
