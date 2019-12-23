@@ -24,27 +24,32 @@ export default class App extends Component {
   }
 
   addToBasket(item) {
-    const { basketItems } = this.state;
-    let newItem = {
-      ...item,
-      amount: 1,
-    }
-    
-    this.setState({ basketItems: [...basketItems, newItem] });
-    
-    // if( basketItems.length === 0 ) {
-    //   this.setState({ basketItems: [ ...basketItems, newItem ] });
-    // } else {
-    //   const updatedItems = basketItems.map(i => {
-    //     if (i.id === newItem.id) {
-    //       return { ...i, amount: i.amount + 1 };
-    //     }
-    //     console.log('outside');
-    //     return newItem;
-    //   });
-    //   this.setState({ basketItems: updatedItems });
-    // }
-  }
+      const { basketItems, basketTotal } = this.state;
+      const existingItem = basketItems.find(i => i.id === item.id);
+      let newItem = {
+        ...item,
+        quantity: 1,
+      }
+  
+      if (existingItem) {
+        const updatedItems = basketItems.map(i => {
+          if (i.id === newItem.id) {
+            return { ...i, quantity: i.quantity + 1 }
+          } else {
+            return i;
+          }
+        });
+        this.setState((state) => ({
+          basketItems: updatedItems,
+          basketTotal: state.basketTotal + existingItem.price
+        }));
+      } else {
+        this.setState((state) => ({ 
+          basketItems: [...basketItems ,newItem ], 
+          basketTotal: state.basketTotal + newItem.price
+        }));
+      }
+  }    
 
   removeFromBasket(itemId) {
     const { basketItems } = this.state;
