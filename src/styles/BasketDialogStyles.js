@@ -53,9 +53,33 @@ export default  {
 
   }, 
   total: {
-    display: "flex",
-    alignItems: "center",
-    marginLeft: "1.5rem"
+    marginLeft: "1.5rem",
+    position: "relative",
+    '&:before': {
+      content: '""',
+      position: 'absolute',
+      bottom: "-1rem",
+      left: 0,
+      width: '50%',
+      height: '2px',
+      display: 'block',
+      background: 'rgba(0, 0, 0, 0.2)',
+    },
+    '&:after': {
+        content: '""',
+        position: 'absolute',
+        top: "-1rem",
+        left: 0,
+        width: '92%',
+        height: '2px',
+        display: 'block',
+        background: 'rgba(0, 0, 0, 0.2)'
+    },
+  },
+  wordTotal: {
+    textTransform: "uppercase",
+    fontWeight: 400,
+    fontSize: ".9rem"
   },
   removeItemButton: {
     minWidth: "40px;",
@@ -65,4 +89,10 @@ export default  {
   noItems: {
     width: "400px"
   },
+  shippingInfo: {
+    fontSize: ".8rem",
+    fontWeight: 700,
+    color: "#64C29E", 
+    marginLeft: "1.5rem",
+  }
 }
