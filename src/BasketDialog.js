@@ -36,12 +36,12 @@ class ResponsiveDialog extends React.Component {
   };
 
   render() {
-    const { fullScreen, classes, basketItems, removeFromBasket, basketTotal } = this.props;
-    console.log('In Dialog: ', basketItems);
+    const { fullScreen, classes, basketItems, removeFromBasket, basketTotal, basketQuantity } = this.props;
+    // console.log('In Dialog: ', basketItems); // DEV
     return (
       <div>
         <Button className={classes.basketOpenButton} onClick={this.handleClickOpen}>
-        <span className={classes.itemsNumber}>{basketItems.length}</span>  
+        <span className={classes.itemsNumber}>{ basketQuantity }</span>  
         <ShoppingBasket 
             className={classes.basket}
           />

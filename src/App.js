@@ -11,6 +11,7 @@ export default class App extends Component {
 
     this.state = {
       basketItems: [],
+      basketQuantity: 0,
       basketTotal: 0,
       bikes: [], 
     }
@@ -25,7 +26,7 @@ export default class App extends Component {
   }
 
   addToBasket(item) {
-      const { basketItems, basketTotal } = this.state;
+      const { basketItems } = this.state;
       const existingItem = basketItems.find(i => i.id === item.id);
       let newItem = {
         ...item,
@@ -42,12 +43,14 @@ export default class App extends Component {
         });
         this.setState((state) => ({
           basketItems: updatedItems,
-          basketTotal: state.basketTotal + existingItem.price
+          basketTotal: state.basketTotal + existingItem.price,
+          basketQuantity: state.basketQuantity + 1
         }));
       } else {
         this.setState((state) => ({ 
           basketItems: [...basketItems ,newItem ], 
-          basketTotal: state.basketTotal + newItem.price
+          basketTotal: state.basketTotal + newItem.price,
+          basketQuantity: state.basketQuantity + 1
         }));
       }
   }    
@@ -59,12 +62,13 @@ export default class App extends Component {
     
     this.setState((state) => ({
       basketItems: updatedBasket,
-      basketTotal: state.basketTotal - (removedItem.price * removedItem.quantity)
+      basketTotal: state.basketTotal - (removedItem.price * removedItem.quantity),
+      basketQuantity: state.basketQuantity - (1 * state.basketQuantity) 
     }));
   }
 
   render() {
-    const { basketItems, bikes, basketTotal } = this.state;
+    const { basketItems, bikes, basketTotal, basketQuantity } = this.state;
 
     return (
       <Switch>
@@ -75,6 +79,7 @@ export default class App extends Component {
             basketItems={ basketItems }
             removeFromBasket={ this.removeFromBasket }
             basketTotal={ basketTotal }
+            basketQuantity={ basketQuantity }
             />}
           />
         <Route 
@@ -86,6 +91,7 @@ export default class App extends Component {
               basketItems={ basketItems }
               removeFromBasket={ this.removeFromBasket }
               basketTotal={ basketTotal } 
+              basketQuantity={ basketQuantity }
               />}
         />
         {/* will need four different routes */}
