@@ -151,7 +151,7 @@ class BikeDialog extends React.Component {
             <Typography gutterBottom> 
               { bike.description }
             </Typography>
-            <h3 className={classes.price}>Price: { bike.price }</h3>
+            <h3 className={classes.price}>Price: {`${ bike.price } $`}</h3>
           </DialogContent>
           <DialogActions>
             <Button 
