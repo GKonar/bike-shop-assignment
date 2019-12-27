@@ -88,7 +88,7 @@ class ResponsiveDialog extends React.Component {
             <h3 className={classes.total}> <span className={classes.wordTotal}>Total: </span> {`${basketTotal} $`} </h3>
             <p className={classes.shippingInfo}>{basketTotal >= 1500 ? 'You got free shipping ! Yupi !' : 'Free shipping from 1500 $' }</p>
             <Button className={classes.pay} variant="contained" color="primary">
-              Pay
+              go to payment
             </Button>
           <DialogActions className={classes.basketFooter}>
             <Button onClick={this.handleClose}>

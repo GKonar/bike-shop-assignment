@@ -94,5 +94,11 @@ export default  {
     fontWeight: 700,
     color: "#64C29E", 
     marginLeft: "1.5rem",
+  },
+  pay: {
+    width: "180px",
+    position: "absolute",
+    bottom: ".5rem",
+    left: ".5rem"
   }
 }

@@ -4,6 +4,7 @@ import WelcomePage from './WelcomePage';
 import Shop from './Shop';
 
 import requests from './Requests';
+import Customer from './Customer';
 
 export default class App extends Component {
   constructor(props) {
@@ -94,7 +95,17 @@ export default class App extends Component {
               basketQuantity={ basketQuantity }
               />}
         />
-        {/* will need four different routes */}
+        <Route 
+            exact path="/customer"
+            render={() => 
+              <Customer 
+                basketItems={ basketItems }
+                removeFromBasket={ this.removeFromBasket }
+                basketTotal={ basketTotal }
+                basketQuantity={ basketQuantity }
+              />
+            }
+        />
       </Switch>
     )
   }
