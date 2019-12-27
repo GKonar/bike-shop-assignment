@@ -13,16 +13,15 @@ const styles = {
     backgroundSize: "cover",
     width: "100%",
     height: "100vh",
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-  }, 
+  },
   contactContainer: {
+    position: "relative",
+    top: "10%",
     backgroundColor: "rgba(0, 0, 0, 0.6)",
-    height: "75%",
+    height: "60%",
     display: "flex",
     justifyContent: 'center',
-    alignItems: "center"
+    alignItems: "center",
   }
 }
 
@@ -31,20 +30,17 @@ class Customer extends Component {
 
     const { basketItems, removeFromBasket, basketTotal, basketQuantity, classes } = this.props;
     return (
-      <div>
-        <Navbar 
-              className={ classes.customerNav }
-              basketItems={ basketItems }
-              removeFromBasket={ removeFromBasket }
-              basketTotal={ basketTotal }
-              basketQuantity={ basketQuantity }
-          />
         <div className={ classes.customer }>
+          <Navbar 
+            basketItems={ basketItems }
+            removeFromBasket={ removeFromBasket }
+            basketTotal={ basketTotal }
+            basketQuantity={ basketQuantity }
+          />
           <div className={classes.contactContainer}> 
             <ContactForm />
           </div>
         </div>
-      </div> 
     )
   }
 }
