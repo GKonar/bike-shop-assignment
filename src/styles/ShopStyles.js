@@ -7,7 +7,7 @@ export default {
     left: "0",
     overflow: "hidden",
     zIndex: "-1",
-    filter: "brightness(150%)"
+    filter: "brightness(200%)"
   },
   productsContainer: {
     width: "80%",
