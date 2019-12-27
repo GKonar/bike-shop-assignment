@@ -5,6 +5,7 @@ import Shop from './Shop';
 
 import requests from './Requests';
 import Customer from './Customer';
+import Faq from './Faq'
 
 export default class App extends Component {
   constructor(props) {
@@ -64,7 +65,7 @@ export default class App extends Component {
     this.setState((state) => ({
       basketItems: updatedBasket,
       basketTotal: state.basketTotal - (removedItem.price * removedItem.quantity),
-      basketQuantity: state.basketQuantity - (1 * state.basketQuantity) 
+      basketQuantity: state.basketQuantity - (1 * removedItem.quantity) 
     }));
   }
 
@@ -104,6 +105,12 @@ export default class App extends Component {
                 basketTotal={ basketTotal }
                 basketQuantity={ basketQuantity }
               />
+            }
+        />
+        <Route 
+            exact path="/customer/faq"
+            render={() => 
+              <Faq />
             }
         />
       </Switch>
