@@ -15,7 +15,8 @@ export default class App extends Component {
       basketItems: [],
       basketQuantity: 0,
       basketTotal: 0,
-      bikes: [], 
+      bikes: [],
+      questions: [] 
     }
 
     this.addToBasket = this.addToBasket.bind(this);
@@ -23,8 +24,12 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
+    const fetchedFaq = await requests.getFaq()
     const fetchedBikes = await requests.getBikes();
-    this.setState({ bikes: fetchedBikes });
+    this.setState({ 
+      bikes: fetchedBikes,
+      questions: fetchedFaq
+    });
   }
 
   addToBasket(item) {
@@ -70,7 +75,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { basketItems, bikes, basketTotal, basketQuantity } = this.state;
+    const { basketItems, bikes, basketTotal, basketQuantity, questions } = this.state;
 
     return (
       <Switch>
@@ -110,7 +115,9 @@ export default class App extends Component {
         <Route 
             exact path="/customer/faq"
             render={() => 
-              <Faq />
+              <Faq 
+                faq={ questions }
+              />
             }
         />
       </Switch>
