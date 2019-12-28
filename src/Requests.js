@@ -18,6 +18,12 @@ class Requests {
     const response = await axios.get(bikesUrl);
     return response.data;
   }
+
+  async getFaq() {
+    const faqUrl = `${this.apiUrl}/faq`;
+    const response = await axios.get(faqUrl);
+    return response.data;
+  } 
 }
 
 const requests = new Requests(apiUrl);

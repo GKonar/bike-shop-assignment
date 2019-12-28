@@ -103,5 +103,57 @@
         } 
       ]    
     }
+  ],
+  "faq" : [
+    {
+      "id": 7,
+      "question": "Part of my order is missing",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium ex purus, in volutpat ligula molestie eget. Cras non viverra velit. Morbi ultrices pulvinar mollis. Suspendisse iaculis mollis urna imperdiet imperdiet. Cras molestie varius diam. Integer tristique enim sed facilisis commodo. Curabitur vel ex ut dui vulputate dapibus. Mauris nec libero aliquam, aliquet dolor a, sagittis nunc. Cras ultrices augue nec porta consequat. Morbi commodo libero eget arcu semper, id viverra tortor lobortis."
+    },
+    {
+      "id": 8,
+      "question": "Can you give me more information about the bikes?",
+      "answer": "Praesent in iaculis est. In elementum vel neque sit amet tincidunt. Etiam feugiat velit ac molestie pharetra. Fusce feugiat nibh blandit viverra dignissim. Quisque iaculis ante et rhoncus mattis. Aliquam erat volutpat. Phasellus fringilla ut odio quis imperdiet. Cras sit amet ex feugiat, molestie tortor ac, eleifend nulla. Cras id placerat dui, non mollis ipsum. Sed eu sem orci. Vivamus eu ipsum eget mi cursus elementum a quis est. Suspendisse potenti."
+    },
+    {
+      "id": 9,
+      "question": "I want to send bike abroad",
+      "answer": "Proin a ante accumsan massa cursus eleifend. Integer sodales, ex in cursus efficitur, arcu ipsum ultricies enim, in tempus leo mauris nec urna. Nunc feugiat justo sit amet nisi elementum, vel sollicitudin nisl volutpat. Morbi a ex euismod, faucibus orci id, vulputate justo. Cras semper urna risus, vel commodo felis semper nec. Nunc enim quam, accumsan vel aliquet sed, placerat et arcu. Phasellus ac quam sed ipsum molestie aliquam ac id justo. In elit dolor, viverra eget mollis eu, maximus ac elit."
+    },
+    {
+      "id": 10,
+      "question": "Has my order been sent yet ?",
+      "answer": "Ut maximus vehicula lorem a dapibus. Praesent fermentum turpis erat, gravida egestas magna pretium sit amet. Phasellus malesuada ullamcorper velit at iaculis. In ex erat, auctor id fermentum in, malesuada vel mi. Fusce felis ex, rutrum ut sem ut, efficitur varius ipsum. Morbi lectus nulla, sodales vel pulvinar sit amet, porttitor a arcu. Nulla sit amet nisl a risus aliquam volutpat."
+    },
+    {
+      "id": 11,
+      "question": "Can I track my order ?",
+      "answer": "Cras pulvinar mauris sed ligula aliquam efficitur. Donec finibus interdum velit eu elementum. In libero turpis, aliquam ac risus iaculis, volutpat tempor elit. Nunc ullamcorper, lacus eget convallis sodales, lacus lorem facilisis massa, et sollicitudin quam neque ut risus. In ut eleifend elit. Nunc et tellus enim. Suspendisse suscipit erat non neque egestas, vitae lacinia nulla eleifend. Aenean blandit leo sed tincidunt ultrices. Donec ut quam a ipsum posuere vulputate."
+    },
+    {
+      "id": 12,
+      "question": "You’ve sent me the wrong items",
+      "answer": "estibulum blandit id erat quis finibus. Sed imperdiet venenatis dignissim. Donec elit dolor, iaculis eu enim at, aliquet fermentum arcu. Donec velit tortor, dignissim a tempus eget, blandit non purus. Quisque in eros egestas, tempus velit eget, pharetra augue. Donec ullamcorper est at augue molestie dignissim. Integer lobortis pulvinar libero non vulputate. Phasellus eget ante orci."
+    },
+    {
+      "id": 13,
+      "question": "Which methods of payments can I use?",
+      "answer": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc et vulputate dolor, in congue mi. In metus neque, rutrum in ultrices feugiat, vulputate in ligula. Maecenas ut sapien lobortis sapien ultricies sollicitudin. Donec in mi iaculis, consectetur nibh et, rutrum magna. Donec faucibus magna non mi bibendum interdum. Proin feugiat facilisis erat nec ullamcorper."
+    },
+    {
+      "id": 14,
+      "question": "I forgot to use my discount code",
+      "answer": "Ut blandit iaculis metus. In hac habitasse platea dictumst. Donec condimentum eros at turpis bibendum, malesuada malesuada nisl aliquet. Duis blandit nisi urna. Mauris pretium nec est ac porta. Ut eu ante at nulla congue finibus a ac nisi. Nulla congue mauris tincidunt, dapibus tortor vitae, viverra lacus. Phasellus ac tellus turpis. Suspendisse varius viverra nisl nec placerat. Nunc vestibulum nisl id nunc lobortis, vel fermentum libero varius."
+    },
+    {
+      "id": 15,
+      "question": "s it safe to order online?",
+      "answer": "Curabitur sit amet sem odio. Praesent mattis mattis leo, eu sodales ipsum. Nunc eu augue facilisis, gravida purus eget, tempor lectus. Sed feugiat massa nisi, ut porta nibh consequat at. Etiam fringilla odio a efficitur sagittis. Nunc eleifend dictum arcu, vel interdum erat congue ac. Morbi volutpat felis nulla, eu efficitur lacus consequat in. Sed gravida lectus ipsum, non varius tortor bibendum et."
+    },
+    {
+      "id": 16,
+      "question": "Delivery - How much is it and how long does it take?",
+      "answer": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In faucibus lacinia aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam placerat a purus nec tempus. Aenean quis mi vel nibh ultricies pretium. Mauris suscipit eleifend nisi, eget auctor diam aliquam eu. Sed quis aliquam neque."
+    }
   ]
 }
