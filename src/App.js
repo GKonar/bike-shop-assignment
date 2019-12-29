@@ -20,6 +20,7 @@ export default class App extends Component {
     }
 
     this.addToBasket = this.addToBasket.bind(this);
+    this.updateBasket = this.updateBasket.bind(this);
     this.removeFromBasket = this.removeFromBasket.bind(this);
   }
 
@@ -33,61 +34,58 @@ export default class App extends Component {
   }
 
   addToBasket(item) {
-      const { basketItems } = this.state;
-      const existingItem = basketItems.find(i => i.id === item.id);
-      let newItem = {
-        ...item,
-        quantity: 1,
-      }
+    const { basketItems } = this.state;
+    const existingItem = basketItems.find(i => i.id === item.id);
+    let newItem = {
+      ...item,
+      quantity: 1,
+    }
   
-      if (existingItem) {
-        const updatedBasket = basketItems.map(i => i.id === newItem.id ? { ...i, quantity: i.quantity + 1 } : i )
-        this.setState((state) => ({
-          basketItems: updatedBasket,
-          basketTotal: state.basketTotal + existingItem.price,
-          basketQuantity: state.basketQuantity + 1
-        }));
-      } else {
-        this.setState((state) => ({ 
-          basketItems: [...basketItems ,newItem ], 
-          basketTotal: state.basketTotal + newItem.price,
-          basketQuantity: state.basketQuantity + 1
-        }));
-      }
+    if (existingItem) {
+      this.updateBasket(existingItem.id, "add");
+    } else {
+      this.setState((state) => ({ 
+        basketItems: [...basketItems ,newItem ], 
+        basketTotal: state.basketTotal + newItem.price,
+        basketQuantity: state.basketQuantity + 1
+      }));
+    }
   }    
 
-  removeFromBasket(itemId, removeAll) {
+  removeFromBasket(itemId) {
     const { basketItems } = this.state;
     let updatedBasket = basketItems.filter(item => item.id !== itemId);
     let removedItem = basketItems.find(item => item.id === itemId);
     
-    if (removedItem.quantity > 1 && !removeAll) {
-      updatedBasket = basketItems.map(i => i.id === itemId ? { ...i, quantity: i.quantity - 1 } : i )
-      this.setState((state) => ({
-        basketItems: updatedBasket,
-        basketTotal: state.basketTotal - removedItem.price,
-        basketQuantity: state.basketQuantity - 1
-      }));
-    } else {
-      // remove all items at once
-      this.setState((state) => ({
-        basketItems: updatedBasket,
-        basketTotal: state.basketTotal - (removedItem.price * removedItem.quantity),
-        basketQuantity: state.basketQuantity - (1 * removedItem.quantity) 
-      }));
-    }
+    this.setState((state) => ({
+      basketItems: updatedBasket,
+      basketTotal: state.basketTotal - (removedItem.price * removedItem.quantity),
+      basketQuantity: state.basketQuantity - (1 * removedItem.quantity) 
+    }));
   }
 
-  // updateBasket(itemId) {
-  //   const { basketItems } = this.state;
-  //   let removedItem = basketItems.find(item => item.id === itemId);
-  //   const updatedBasket = basketItems.map(i => i.id === itemId ? { ...i, quantity: i.quantity - 1 } : i )
-  //   this.setState((state) => ({
-  //     basketItems: updatedBasket,
-  //     basketTotal: state.basketTotal - removedItem.price,
-  //     basketQuantity: state.basketQuantity - 1
-  //   }));
-  // }
+  updateBasket(itemId, action) {
+    const { basketItems } = this.state;
+    let itemToUpdate = basketItems.find(item => item.id === itemId);
+    const updatedBasket = basketItems.map(i => i.id === itemId ? { ...i, quantity: i.quantity - 1 } : i )
+
+    if (action === 'add') {
+      const updatedBasket = basketItems.map(i => i.id === itemId ? { ...i, quantity: i.quantity + 1 } : i )
+        this.setState((state) => ({
+          basketItems: updatedBasket,
+          basketTotal: state.basketTotal + itemToUpdate.price,
+          basketQuantity: state.basketQuantity + 1
+        }));
+    } else {
+      this.setState((state) => ({
+        basketItems: updatedBasket,
+        basketTotal: state.basketTotal - itemToUpdate.price,
+        basketQuantity: state.basketQuantity - 1
+      }), () => {
+        if ( itemToUpdate.quantity === 1 ) this.removeFromBasket(itemToUpdate.id)
+      });
+    }
+  }
 
   render() {
     const { basketItems, bikes, basketTotal, basketQuantity, questions } = this.state;
@@ -99,10 +97,11 @@ export default class App extends Component {
         render={() => 
           <WelcomePage 
             basketItems={ basketItems }
-            removeFromBasket={ this.removeFromBasket }
             basketTotal={ basketTotal }
             basketQuantity={ basketQuantity }
-            addToBasket={ this.addToBasket } //DEV
+            addToBasket={ this.addToBasket }
+            removeFromBasket={ this.removeFromBasket }
+            updateBasket={ this.updateBasket }
             />}
           />
         <Route 
@@ -110,11 +109,12 @@ export default class App extends Component {
           render={() => 
             <Shop 
               bikes={ bikes }
-              addToBasket={ this.addToBasket }
               basketItems={ basketItems }
-              removeFromBasket={ this.removeFromBasket }
               basketTotal={ basketTotal } 
               basketQuantity={ basketQuantity }
+              addToBasket={ this.addToBasket }
+              removeFromBasket={ this.removeFromBasket }
+              updateBasket={ this.updateBasket }
               />}
         />
         <Route 
@@ -122,10 +122,11 @@ export default class App extends Component {
           render={() => 
             <Customer 
               basketItems={ basketItems }
-              removeFromBasket={ this.removeFromBasket }
               basketTotal={ basketTotal }
               basketQuantity={ basketQuantity }
-              addToBasket={ this.addToBasket } //DEV
+              addToBasket={ this.addToBasket }
+              removeFromBasket={ this.removeFromBasket }
+              updateBasket={ this.updateBasket }
             />
           }
         />

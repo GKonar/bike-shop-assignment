@@ -9,7 +9,7 @@ import styles from './styles/ShopStyles';
 
 class Shop extends Component {
   render() {
-    const { classes, bikes, addToBasket, basketItems, removeFromBasket, basketTotal, basketQuantity } = this.props;
+    const { classes, bikes, addToBasket, basketItems, removeFromBasket, basketTotal, basketQuantity, updateBasket } = this.props;
     return (
       <div className={classes.root}>
         <Navbar 
@@ -17,7 +17,9 @@ class Shop extends Component {
           removeFromBasket={removeFromBasket}
           basketTotal={basketTotal}
           basketQuantity={ basketQuantity }
-          addToBasket={ addToBasket }/>
+          addToBasket={ addToBasket }
+          updateBasket={ updateBasket }
+          />
         <div className={classes.productsContainer}>
           <div className={classes.products}>
             {

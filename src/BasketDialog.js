@@ -36,7 +36,7 @@ class ResponsiveDialog extends React.Component {
   };
 
   render() {
-    const { fullScreen, classes, basketItems, removeFromBasket, basketTotal, basketQuantity, addToBasket } = this.props;
+    const { fullScreen, classes, basketItems, removeFromBasket, basketTotal, basketQuantity, updateBasket } = this.props;
     return (
       <div>
         <Button className={classes.basketOpenButton} onClick={this.handleClickOpen}>
@@ -70,17 +70,17 @@ class ResponsiveDialog extends React.Component {
                     </h4>
                   </div>
                   <div className={classes.basketInfo}>
-                    <Fab onClick={() => addToBasket(item)} size="small" color="primary" variant="extended" aria-label="Add">
+                    <Fab onClick={() => updateBasket(item.id, "add")} size="small" color="primary" variant="extended" aria-label="Add">
                       <span>&#43;</span>
                     </Fab>
                       <span className={classes.quantity}>
                         Qty: { item.quantity }
                       </span>
-                    <Fab onClick={() => removeFromBasket(item.id, false)} size="small" color="secondary" variant="extended" aria-label="Delete">
+                    <Fab onClick={() => updateBasket(item.id)} size="small" color="secondary" variant="extended" aria-label="Delete">
                       <span>&#8722;</span>
                     </Fab>
                     
-                    <Button className={classes.removeItemButton} onClick={() => removeFromBasket(item.id, true)}>
+                    <Button className={classes.removeItemButton} onClick={() => removeFromBasket(item.id)}>
                       <RemoveShoppingCart />
                     </Button>
                   </div>

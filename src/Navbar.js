@@ -8,7 +8,7 @@ import styles from './styles/NavbarStyles';
 
 class Navbar extends Component {
   render() {
-    const { classes, basketItems, removeFromBasket, basketTotal, basketQuantity, addToBasket } = this.props;
+    const { classes, basketItems, removeFromBasket, basketTotal, basketQuantity, addToBasket, updateBasket } = this.props;
 
     return (
       <div className={classes.navContainer}>
@@ -25,7 +25,8 @@ class Navbar extends Component {
               basketTotal={ basketTotal }
               basketQuantity={ basketQuantity }
               addToBasket={ addToBasket }
-              />
+              updateBasket={ updateBasket }
+            />
           </div>
         </nav>
       </div>
