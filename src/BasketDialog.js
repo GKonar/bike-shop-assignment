@@ -79,7 +79,6 @@ class ResponsiveDialog extends React.Component {
                     <Fab onClick={() => updateBasket(item.id)} size="small" color="secondary" variant="extended" aria-label="Delete">
                       <span>&#8722;</span>
                     </Fab>
-                    
                     <Button className={classes.removeItemButton} onClick={() => removeFromBasket(item.id)}>
                       <RemoveShoppingCart />
                     </Button>
