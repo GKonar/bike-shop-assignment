@@ -5,7 +5,7 @@ import Shop from './Shop';
 
 import requests from './Requests';
 import Customer from './Customer';
-import Faq from './Faq'
+import Faq from './Faq';
 
 export default class App extends Component {
   constructor(props) {
@@ -15,8 +15,8 @@ export default class App extends Component {
       basketItems: [],
       basketQuantity: 0,
       basketTotal: 0,
-      bikes: [],
-      questions: [] 
+      bikes: [], 
+      questions:[]
     }
 
     this.addToBasket = this.addToBasket.bind(this);
@@ -24,11 +24,11 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
-    const fetchedFaq = await requests.getFaq()
+    const fetchedQuestions = await requests.getFaq();
     const fetchedBikes = await requests.getBikes();
     this.setState({ 
       bikes: fetchedBikes,
-      questions: fetchedFaq
+      questions: fetchedQuestions
     });
   }
 
@@ -41,15 +41,9 @@ export default class App extends Component {
       }
   
       if (existingItem) {
-        const updatedItems = basketItems.map(i => {
-          if (i.id === newItem.id) {
-            return { ...i, quantity: i.quantity + 1 }
-          } else {
-            return i;
-          }
-        });
+        const updatedBasket = basketItems.map(i => i.id === newItem.id ? { ...i, quantity: i.quantity + 1 } : i )
         this.setState((state) => ({
-          basketItems: updatedItems,
+          basketItems: updatedBasket,
           basketTotal: state.basketTotal + existingItem.price,
           basketQuantity: state.basketQuantity + 1
         }));
@@ -62,17 +56,38 @@ export default class App extends Component {
       }
   }    
 
-  removeFromBasket(itemId) {
+  removeFromBasket(itemId, removeAll) {
     const { basketItems } = this.state;
-    const updatedBasket = basketItems.filter(item => item.id !== itemId);
+    let updatedBasket = basketItems.filter(item => item.id !== itemId);
     let removedItem = basketItems.find(item => item.id === itemId);
     
-    this.setState((state) => ({
-      basketItems: updatedBasket,
-      basketTotal: state.basketTotal - (removedItem.price * removedItem.quantity),
-      basketQuantity: state.basketQuantity - (1 * removedItem.quantity) 
-    }));
+    if (removedItem.quantity > 1 && !removeAll) {
+      updatedBasket = basketItems.map(i => i.id === itemId ? { ...i, quantity: i.quantity - 1 } : i )
+      this.setState((state) => ({
+        basketItems: updatedBasket,
+        basketTotal: state.basketTotal - removedItem.price,
+        basketQuantity: state.basketQuantity - 1
+      }));
+    } else {
+      // remove all items at once
+      this.setState((state) => ({
+        basketItems: updatedBasket,
+        basketTotal: state.basketTotal - (removedItem.price * removedItem.quantity),
+        basketQuantity: state.basketQuantity - (1 * removedItem.quantity) 
+      }));
+    }
   }
+
+  // updateBasket(itemId) {
+  //   const { basketItems } = this.state;
+  //   let removedItem = basketItems.find(item => item.id === itemId);
+  //   const updatedBasket = basketItems.map(i => i.id === itemId ? { ...i, quantity: i.quantity - 1 } : i )
+  //   this.setState((state) => ({
+  //     basketItems: updatedBasket,
+  //     basketTotal: state.basketTotal - removedItem.price,
+  //     basketQuantity: state.basketQuantity - 1
+  //   }));
+  // }
 
   render() {
     const { basketItems, bikes, basketTotal, basketQuantity, questions } = this.state;
@@ -87,6 +102,7 @@ export default class App extends Component {
             removeFromBasket={ this.removeFromBasket }
             basketTotal={ basketTotal }
             basketQuantity={ basketQuantity }
+            addToBasket={ this.addToBasket } //DEV
             />}
           />
         <Route 
@@ -102,23 +118,22 @@ export default class App extends Component {
               />}
         />
         <Route 
-            exact path="/customer"
-            render={() => 
-              <Customer 
-                basketItems={ basketItems }
-                removeFromBasket={ this.removeFromBasket }
-                basketTotal={ basketTotal }
-                basketQuantity={ basketQuantity }
-              />
-            }
+          exact path="/customer"
+          render={() => 
+            <Customer 
+              basketItems={ basketItems }
+              removeFromBasket={ this.removeFromBasket }
+              basketTotal={ basketTotal }
+              basketQuantity={ basketQuantity }
+              addToBasket={ this.addToBasket } //DEV
+            />
+          }
         />
         <Route 
-            exact path="/customer/faq"
-            render={() => 
-              <Faq 
-                faq={ questions }
-              />
-            }
+          exact path="/customer/faq"
+          render={() => 
+            <Faq faq={ questions }/>
+          }
         />
       </Switch>
     )
