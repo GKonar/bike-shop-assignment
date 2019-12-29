@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
+import Fab from '@material-ui/core/Fab';
 import Divider from '@material-ui/core/Divider';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import withMobileDialog from '@material-ui/core/withMobileDialog';
@@ -35,7 +36,7 @@ class ResponsiveDialog extends React.Component {
   };
 
   render() {
-    const { fullScreen, classes, basketItems, removeFromBasket, basketTotal, basketQuantity } = this.props;
+    const { fullScreen, classes, basketItems, removeFromBasket, basketTotal, basketQuantity, addToBasket } = this.props;
     return (
       <div>
         <Button className={classes.basketOpenButton} onClick={this.handleClickOpen}>
@@ -69,8 +70,17 @@ class ResponsiveDialog extends React.Component {
                     </h4>
                   </div>
                   <div className={classes.basketInfo}>
-                    <span className={classes.quantity}>Qty: {item.quantity}</span>
-                    <Button className={classes.removeItemButton} onClick={() => removeFromBasket(item.id)}>
+                    <Fab onClick={() => addToBasket(item)} size="small" color="primary" variant="extended" aria-label="Add">
+                      <span>&#43;</span>
+                    </Fab>
+                      <span className={classes.quantity}>
+                        Qty: { item.quantity }
+                      </span>
+                    <Fab onClick={() => removeFromBasket(item.id, false)} size="small" color="secondary" variant="extended" aria-label="Delete">
+                      <span>&#8722;</span>
+                    </Fab>
+                    
+                    <Button className={classes.removeItemButton} onClick={() => removeFromBasket(item.id, true)}>
                       <RemoveShoppingCart />
                     </Button>
                   </div>
