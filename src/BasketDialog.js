@@ -3,7 +3,6 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-// import DialogContentText from '@material-ui/core/DialogContentText';
 import Divider from '@material-ui/core/Divider';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import withMobileDialog from '@material-ui/core/withMobileDialog';
@@ -37,7 +36,6 @@ class ResponsiveDialog extends React.Component {
 
   render() {
     const { fullScreen, classes, basketItems, removeFromBasket, basketTotal, basketQuantity } = this.props;
-    // console.log('In Dialog: ', basketItems); // DEV
     return (
       <div>
         <Button className={classes.basketOpenButton} onClick={this.handleClickOpen}>

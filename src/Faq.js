@@ -29,7 +29,7 @@ const styles = {
     backgroundColor: "rgba(0, 0, 0, 0.8)",
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "center",
+    justifyContent: "center", 
     overflow: "scroll",
   },
   faqListItem: {
