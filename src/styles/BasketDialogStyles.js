@@ -25,7 +25,7 @@ export default  {
     color: "#FFF"
   }, 
   basketItem: {
-    width: "400px",
+    width: "500px",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between"
@@ -50,7 +50,7 @@ export default  {
     alignItems: "center"
   },
   quantity: {
-
+    margin: "0 .3rem"
   }, 
   total: {
     marginLeft: "1.5rem",
@@ -87,7 +87,7 @@ export default  {
     borderRadius: "50%",
   },
   noItems: {
-    width: "400px"
+    width: "500px"
   },
   shippingInfo: {
     fontSize: ".8rem",
