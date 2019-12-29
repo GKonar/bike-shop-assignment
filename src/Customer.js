@@ -28,7 +28,7 @@ const styles = {
 class Customer extends Component {
   render() {
 
-    const { basketItems, removeFromBasket, basketTotal, basketQuantity, classes } = this.props;
+    const { basketItems, removeFromBasket, basketTotal, basketQuantity, classes, addToBasket } = this.props;
     return (
         <div className={ classes.customer }>
           <Navbar 
@@ -36,7 +36,8 @@ class Customer extends Component {
             removeFromBasket={ removeFromBasket }
             basketTotal={ basketTotal }
             basketQuantity={ basketQuantity }
-          />
+            addToBasket={ addToBasket }
+          /> 
           <div className={classes.contactContainer}> 
             <ContactForm />
           </div>

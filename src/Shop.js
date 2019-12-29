@@ -16,7 +16,8 @@ class Shop extends Component {
           basketItems={basketItems}
           removeFromBasket={removeFromBasket}
           basketTotal={basketTotal}
-          basketQuantity={ basketQuantity }/>
+          basketQuantity={ basketQuantity }
+          addToBasket={ addToBasket }/>
         <div className={classes.productsContainer}>
           <div className={classes.products}>
             {
