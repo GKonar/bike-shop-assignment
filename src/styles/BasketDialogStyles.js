@@ -1,3 +1,5 @@
+import sizes from './sizes';
+
 export default  {
   basketHeader: {
     backgroundColor:  "rgba(0, 0, 0, 0.8)",
@@ -10,7 +12,7 @@ export default  {
       transform: "scale(1.1)",
       color: "#64C29E",
       cursor: "pointer"
-    }
+    },
   },
   basketOpenButton: {
     width: "60px;",
@@ -29,15 +31,28 @@ export default  {
     minWidth: "500px", 
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    [sizes.down("xs")]: {
+      minWidth: "340px"
+    },
   },
   itemWrapper: {
-    display: "flex"
+    display: "flex",
+    alignItems: "center"
   },
   itemImageContainer: {
     width: "50px",
     height: "50px",
-    marginRight: "1rem"
+    marginRight: "1rem",
+    [sizes.down("xs")]: {
+      width: "40px",
+      height: "40px",
+    },
+  },
+  itemName: {
+    [sizes.down("xs")]: {
+      fontSize: ".9rem",
+    },
   },
   itemImage: {
     width: "100%"
