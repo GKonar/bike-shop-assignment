@@ -34,63 +34,67 @@ class Navbar extends Component {
     const { anchorEl } = this.state;
 
     return (
-      <div className={classes.navContainer}>
-        <nav className={classes.nav}>
-          <Link to="/">about us</Link>
-          <Link to="/work">work</Link>
-          <Link to="/"><img src={`${logo}`} alt="logo"/></Link>
-          <Link to="/shop">shop</Link>
-          <Link to="/customer">customer</Link>
-          <div className={classes.basketContainer}>
-            <BasketDialog 
-              basketItems={ basketItems }
-              removeFromBasket={ removeFromBasket }
-              basketTotal={ basketTotal }
-              basketQuantity={ basketQuantity }
-              addToBasket={ addToBasket }
-              updateBasket={ updateBasket }
-            />
-          </div>
-        </nav>
+      <div>
+        {/* DESKTOP NAV */}
+        <div className={classes.navContainer}>
+          <nav className={classes.nav}>
+            <Link to="/">about us</Link>
+            <Link to="/work">work</Link>
+            <Link to="/"><img src={`${logo}`} alt="logo"/></Link>
+            <Link to="/shop">shop</Link>
+            <Link to="/customer">customer</Link>
+            <div className={classes.basketContainer}>
+              <BasketDialog 
+                basketItems={ basketItems }
+                removeFromBasket={ removeFromBasket }
+                basketTotal={ basketTotal }
+                basketQuantity={ basketQuantity }
+                addToBasket={ addToBasket }
+                updateBasket={ updateBasket }
+              />
+            </div>
+          </nav>
+        </div>
+        
+        { /* MOBILE NAV */}
+        <div className={classes.mobileNav}>
+          <Button
+            aria-owns={anchorEl ? 'simple-menu' : undefined}
+            aria-haspopup="true"
+            onClick={this.handleClick}
+          >
+            <MenuIcon className={classes.mobileNavIcon}/>
+          </Button>
+          <BasketDialog 
+            basketItems={ basketItems }
+            removeFromBasket={ removeFromBasket }
+            basketTotal={ basketTotal }
+            basketQuantity={ basketQuantity }
+            addToBasket={ addToBasket }
+            updateBasket={ updateBasket }
+          />
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={this.handleClose}
+            className={classes.mobileNavMenu}
+          >
+            <Link to="/">
+              <MenuItem className={classes.mobileNavItem} onClick={this.handleClose}>about us</MenuItem>
+            </Link>
+            <Link to="/work">
+              <MenuItem className={classes.mobileNavItem} onClick={this.handleClose}>work</MenuItem>
+            </Link>
+            <Link to="/shop">
+              <MenuItem className={classes.mobileNavItem} onClick={this.handleClose}>shop</MenuItem>
+            </Link>
+            <Link to="/customer">
+              <MenuItem className={classes.mobileNavItem} onClick={this.handleClose}>customer</MenuItem>
+            </Link>
+          </Menu>
+        </div>
       </div>
-      // <div className={classes.mobileNav}>
-      //   <Button
-      //     aria-owns={anchorEl ? 'simple-menu' : undefined}
-      //     aria-haspopup="true"
-      //     onClick={this.handleClick}
-      //   >
-      //     <MenuIcon className={classes.mobileNavIcon}/>
-      //   </Button>
-      //   <BasketDialog 
-      //     basketItems={ basketItems }
-      //     removeFromBasket={ removeFromBasket }
-      //     basketTotal={ basketTotal }
-      //     basketQuantity={ basketQuantity }
-      //     addToBasket={ addToBasket }
-      //     updateBasket={ updateBasket }
-      //   />
-      //   <Menu
-      //     id="simple-menu"
-      //     anchorEl={anchorEl}
-      //     open={Boolean(anchorEl)}
-      //     onClose={this.handleClose}
-      //     className={classes.mobileNavMenu}
-      //   >
-      //     <Link to="/">
-      //       <MenuItem className={classes.mobileNavItem} onClick={this.handleClose}>about us</MenuItem>
-      //     </Link>
-      //     <Link to="/work">
-      //       <MenuItem className={classes.mobileNavItem} onClick={this.handleClose}>work</MenuItem>
-      //     </Link>
-      //     <Link to="/shop">
-      //       <MenuItem className={classes.mobileNavItem} onClick={this.handleClose}>shop</MenuItem>
-      //     </Link>
-      //     <Link to="/customer">
-      //       <MenuItem className={classes.mobileNavItem} onClick={this.handleClose}>customer</MenuItem>
-      //     </Link>
-      //   </Menu>
-      // </div>
-
     )
   }
 }
