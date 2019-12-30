@@ -9,7 +9,7 @@ import styles from './styles/BikeStyles';
 class Bike extends Component {
   constructor(props) {
     super(props);
-
+    
     this.handleAddToBasket = this.handleAddToBasket.bind(this);
   }
 

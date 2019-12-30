@@ -42,9 +42,6 @@ export default  {
   itemImage: {
     width: "100%"
   },
-  itemName: {
-
-  }, 
   basketInfo: {
     display: "flex",
     justifyContent: "center",

@@ -86,7 +86,7 @@ class ContactForm extends Component {
               multiline
               className={classes.textArea}
               variant="filled"
-              rows={8}
+              rows={5}
             />
             <Button className={classes.submitButton} type="submit" variant="outlined" color="primary"> SEND </Button>
         </form>

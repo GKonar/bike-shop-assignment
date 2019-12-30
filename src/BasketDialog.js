@@ -25,6 +25,7 @@ class ResponsiveDialog extends React.Component {
 
     this.handleClickOpen = this.handleClickOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handlePayment = this.handlePayment.bind(this);
   }
   
   handleClickOpen() {
@@ -34,6 +35,10 @@ class ResponsiveDialog extends React.Component {
   handleClose() {
     this.setState({ open: false });
   };
+
+  handlePayment() {
+    alert('No action added :)')
+  }
 
   render() {
     const { fullScreen, classes, basketItems, removeFromBasket, basketTotal, basketQuantity, updateBasket } = this.props;
@@ -63,7 +68,7 @@ class ResponsiveDialog extends React.Component {
                   key={ uuid() }>
                   <div className={classes.itemWrapper}>
                     <div className={classes.itemImageContainer}>
-                      <img className={classes.itemImage} src={item.images[1].src} alt="itemImage"/>
+                      <img className={classes.itemImage} src={item.images[0].src} alt="itemImage"/>
                     </div>
                     <h4 className={classes.itemName}>
                       {item.bikeName}
@@ -94,7 +99,7 @@ class ResponsiveDialog extends React.Component {
           </DialogContent>
             <h3 className={classes.total}> <span className={classes.wordTotal}>Total: </span> {`${basketTotal} $`} </h3>
             <p className={classes.shippingInfo}>{basketTotal >= 1500 ? 'You got free shipping ! Yupi !' : 'Free shipping from 1500 $' }</p>
-            <Button className={classes.pay} variant="contained" color="primary">
+            <Button onClick={this.handlePayment} className={classes.pay} variant="contained" color="primary">
               go to payment
             </Button>
           <DialogActions className={classes.basketFooter}>

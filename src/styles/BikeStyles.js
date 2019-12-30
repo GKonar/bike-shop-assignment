@@ -15,7 +15,7 @@ export default {
     cursor: "pointer",
     "&:hover $basketContainer": {
       opacity: "1"
-    }
+    },
   },
   price: {
     position: "absolute",
