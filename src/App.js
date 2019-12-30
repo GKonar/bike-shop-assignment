@@ -3,6 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import WelcomePage from './WelcomePage';
 import Shop from './Shop';
 
+import LocalStorageManager from './LocalStorageManager';
+
 import requests from './Requests';
 import Customer from './Customer';
 import Faq from './Faq';
@@ -22,14 +24,28 @@ export default class App extends Component {
     this.addToBasket = this.addToBasket.bind(this);
     this.updateBasket = this.updateBasket.bind(this);
     this.removeFromBasket = this.removeFromBasket.bind(this);
+    
+    this.storage = new LocalStorageManager();
   }
 
   async componentDidMount() {
     const fetchedQuestions = await requests.getFaq();
     const fetchedBikes = await requests.getBikes();
+    const storage = this.storage;
+    
     this.setState({ 
       bikes: fetchedBikes,
-      questions: fetchedQuestions
+      questions: fetchedQuestions,
+      basketItems: storage.loadState('basketItems') || [],
+      basketQuantity: storage.loadState('basketQuantity') || 0,
+      basketTotal: storage.loadState('basketTotal') || 0,
+    });
+
+    // Save state
+    window.addEventListener('beforeunload', () => {
+      storage.saveState('basketItems', this.state.basketItems)
+      storage.saveState('basketQuantity', this.state.basketQuantity)
+      storage.saveState('basketTotal', this.state.basketTotal)
     });
   }
 
