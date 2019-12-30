@@ -25,7 +25,8 @@ export default  {
     color: "#FFF"
   }, 
   basketItem: {
-    width: "500px",
+    width: "100%",
+    minWidth: "500px", 
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between"

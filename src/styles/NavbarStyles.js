@@ -1,7 +1,13 @@
+import sizes from './sizes';
+
 export default {
   navContainer: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
-    zIndex: "100"
+    zIndex: "100",
+    [sizes.down("md")]: {
+      display: 'none',
+      // marginBottom: "1rem"
+    },
   },
   nav: {
     position: "relative",
@@ -39,12 +45,20 @@ export default {
       cursor: "pointer"
     }
   },
+  
   // mobileNavStyles
   mobileNav: {
-    display: "flex",  
+    display: "none",  
     paddingLeft: "2rem",
     backgroundColor: "rgba(0, 0, 0, 0.5)", 
-    marginBottom: "3rem"
+    marginBottom: "2.5rem",
+    zIndex: "150",
+    [sizes.down("md")]: {
+      display: 'flex'
+    },
+    [sizes.down("xxs")]: {
+      marginBottom: "1.7rem",
+    },
   }, 
   mobileNavMenu: {
     "& a": {

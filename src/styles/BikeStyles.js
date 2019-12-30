@@ -1,3 +1,5 @@
+import sizes from './sizes';
+
 export default { 
   bike: {
     position: "relative",
@@ -45,7 +47,10 @@ export default {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    cursor: "pointer"
+    cursor: "pointer",
+    [sizes.down('lg')]: {
+      opacity: 1
+    },
   },
   basketButton: {
     fontSize: "2rem"
