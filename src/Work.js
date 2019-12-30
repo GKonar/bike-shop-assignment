@@ -57,6 +57,7 @@ class Work extends React.Component {
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-slide-description">
+              {/* eslint-disable-next-line */ }
               This route is currently in progress. Enjoy rest of the shop. <span>🤩</span>
             </DialogContentText>
           </DialogContent>
