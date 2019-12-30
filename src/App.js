@@ -8,6 +8,7 @@ import LocalStorageManager from './LocalStorageManager';
 import requests from './Requests';
 import Customer from './Customer';
 import Faq from './Faq';
+import Work from './Work';
 
 export default class App extends Component {
   constructor(props) {
@@ -150,6 +151,12 @@ export default class App extends Component {
           exact path="/customer/faq"
           render={() => 
             <Faq faq={ questions }/>
+          }
+        />
+        <Route 
+          exact path="/work/"
+          render={() => 
+            <Work/>
           }
         />
       </Switch>
