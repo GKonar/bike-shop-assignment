@@ -4,38 +4,7 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/styles';
-
-const styles = {
-  contact: {
-    backgroundColor: "#fff",
-    width: "600px",
-    padding: "1rem 2rem",
-    borderRadius: "5px"
-  },
-  contactHeader: {
-    color: "#64C29E",
-    letterSpacing: "1px"
-  },
-  paragraph: {
-    margin: "1rem 2rem",
-    fontWeight: 500
-  },
-  contactForm: {
-    display: "flex",
-    flexDirection: "column"
-  },
-  textField: {
-    margin: ".2rem 2rem"
-  },
-  textArea: {
-    margin: ".2rem 2rem",
-  },
-  submitButton: {
-    width: "40%",
-    margin: "1rem auto",
-    padding: "1rem"
-  }
-}
+import styles from './styles/ContactFormStyles';
 
 class ContactForm extends Component {
   constructor(props) {
