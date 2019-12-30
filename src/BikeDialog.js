@@ -12,6 +12,8 @@ import Typography from '@material-ui/core/Typography';
 import AddShoppingCart from '@material-ui/icons/AddShoppingCart';
 import styles from './styles/BikeDialogStyles';
 
+import defaultImage from './assets/images/default.jpg';
+
 const DialogTitle = withStyles(theme => ({
   root: {
     borderBottom: `1px solid ${theme.palette.divider}`,
@@ -124,13 +126,14 @@ class BikeDialog extends React.Component {
             <div className={classes.imagesContainer}>
               {
                 bike.images.map(img => {
+                  const bikeImage = img.src === undefined || "" ? defaultImage : img.src
                   return (
                     <div
                       key={img.id} 
                       className={classes.imageContainer}>
                       <img 
                         className={classes.image} 
-                        src={img.src}
+                        src={ bikeImage }
                         alt="bike" 
                         onClick={() => this.openImage(img.id)}
                       />
