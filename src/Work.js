@@ -10,20 +10,10 @@ import Slide from '@material-ui/core/Slide';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 
-import inProgressImage from './assets/images/inProgress.jpeg';
+import styles from './styles/WorkStyles';
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
-}
-
-const styles = {
-  work: {
-    backgroundImage: `url(${inProgressImage})`,
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    width: "100%",
-    height: "100vh",
-  }
 }
 
 class Work extends React.Component {

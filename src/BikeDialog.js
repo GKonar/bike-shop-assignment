@@ -117,7 +117,6 @@ class BikeDialog extends React.Component {
           onClose={this.handleClose}
           aria-labelledby="customized-dialog-title"
           open={ openDialog }
-          // open={ true } // DEV
         >
           <DialogTitle id="customized-dialog-title" onClose={this.handleClose}>
             { bike.bikeName }
