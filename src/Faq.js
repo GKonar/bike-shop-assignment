@@ -18,11 +18,11 @@ function Faq(props) {
             faq.map((q, i) => {
               return (
                 <div 
-                  className={classes.faqListItem}
+                  className={ classes.faqListItem }
                   key={uuid()}>
-                  <h2 className={classes.faqListItemHeader}>{minTwoDigits(i + 1)}</h2>
-                  <h3 className={classes.faqQuestion}>{q.question}</h3>
-                  <p className={classes.faqAnswer}>{q.answer}</p>
+                  <h2 className={ classes.faqListItemHeader }>{ minTwoDigits(i + 1) }</h2>
+                  <h3 className={ classes.faqQuestion }>{ q.question }</h3>
+                  <p className={ classes.faqAnswer }>{ q.answer }</p>
                 </div> 
             )})
           }

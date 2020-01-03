@@ -18,7 +18,7 @@ function Customer(props) {
         addToBasket={ addToBasket }
         updateBasket={ updateBasket }
       /> 
-      <div className={classes.contactContainer}> 
+      <div className={ classes.contactContainer }> 
         <ContactForm />
       </div>
     </div>

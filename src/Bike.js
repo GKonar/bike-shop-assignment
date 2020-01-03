@@ -24,25 +24,25 @@ class Bike extends Component {
     const bikeImage = bike.images[0].src === undefined || "" ? defaultImage : bike.images[0].src;
 
     return (
-      <div className={classes.bike}>
-        <h3 className={classes.name}>{bike.bikeName}</h3>
-        <span className={classes.price}>{`${bike.price}$`} </span>
-        <div className={classes.imageContainer}>
+      <div className={ classes.bike }>
+        <h3 className={ classes.name }>{ bike.bikeName }</h3>
+        <span className={ classes.price }>{`${bike.price}$`} </span>
+        <div className={ classes.imageContainer }>
           <BikeDialog
             bike={ bike }
             addToBasket={ this.handleAddToBasket }
           />
           <img 
-            className={classes.image} 
-            src={bikeImage} 
+            className={ classes.image } 
+            src={ bikeImage } 
             alt="redBike"/>
         </div>
         <span 
-          className={classes.basketContainer}
+          className={ classes.basketContainer }
           onClick={(e) => this.handleAddToBasket(e, bike)}>
           Add &nbsp; 
           <ShoppingBasket 
-            className={classes.basketButton}/>
+            className={ classes.basketButton }/>
         </span>
 
       </div>

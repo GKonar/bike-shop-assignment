@@ -32,10 +32,10 @@ const DialogTitle = withStyles(theme => ({
 }))(props => {
   const { children, classes, onClose } = props;
   return (
-    <MuiDialogTitle disableTypography className={classes.root}>
+    <MuiDialogTitle disableTypography className={ classes.root }>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton aria-label="Close" className={classes.closeButton} onClick={onClose}>
+        <IconButton aria-label="Close" className={ classes.closeButton } onClick={ onClose }>
           <CloseIcon />
         </IconButton>
       ) : null}
@@ -109,12 +109,12 @@ class BikeDialog extends React.Component {
       <div>
         <Button 
           variant="outlined" 
-          onClick={this.handleClickOpen}
-          className={classes.dialogButton}>
+          onClick={ this.handleClickOpen }
+          className={ classes.dialogButton }>
           More
         </Button>
         <Dialog
-          onClose={this.handleClose}
+          onClose={ this.handleClose }
           aria-labelledby="customized-dialog-title"
           open={ openDialog }
         >
@@ -122,16 +122,16 @@ class BikeDialog extends React.Component {
             { bike.bikeName }
           </DialogTitle>
           <DialogContent className={ classes.dialogContent}>
-            <div className={classes.imagesContainer}>
+            <div className={ classes.imagesContainer }>
               {
                 bike.images.map(img => {
                   const bikeImage = img.src === undefined || "" ? defaultImage : img.src
                   return (
                     <div
-                      key={img.id} 
-                      className={classes.imageContainer}>
+                      key={ img.id } 
+                      className={ classes.imageContainer }>
                       <img 
-                        className={classes.image} 
+                        className={ classes.image } 
                         src={ bikeImage }
                         alt="bike" 
                         onClick={() => this.openImage(img.id)}
@@ -139,9 +139,9 @@ class BikeDialog extends React.Component {
                       <span className={classes.imageModal} >
                         <img 
                           style={{ opacity: zoomImage ? '1' : '0'}}
-                          src={currentImage} 
+                          src={ currentImage } 
                           alt="modalImage"
-                          onClick={this.closeImage}
+                          onClick={ this.closeImage }
                           />
                       </span>
                     </div>
@@ -149,18 +149,18 @@ class BikeDialog extends React.Component {
                 })
               }
             </div>
-            <h3 className={classes.name}>{ bike.bikeName }, first unit: { bike.year } </h3>
+            <h3 className={ classes.name }>{ bike.bikeName }, first unit: { bike.year } </h3>
             <Typography gutterBottom> 
               { bike.description }
             </Typography>
-            <h3 className={classes.price}>Price: {`${ bike.price } $`}</h3>
+            <h3 className={ classes.price }>Price: {`${ bike.price } $`}</h3>
           </DialogContent>
           <DialogActions>
             <Button 
-              className={classes.button} 
+              className={ classes.button } 
               onClick={(e) => this.props.addToBasket(e, bike)} 
               color="primary">
-              <AddShoppingCart className={classes.addToCartIcon}/>
+              <AddShoppingCart className={ classes.addToCartIcon }/>
             </Button>
           </DialogActions>
         </Dialog>

@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/styles';
 import BasketDialog from './BasketDialog';
 import MenuIcon from '@material-ui/icons/Menu';
 
-
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -75,22 +74,22 @@ class Navbar extends Component {
           />
           <Menu
             id="simple-menu"
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={this.handleClose}
-            className={classes.mobileNavMenu}
+            anchorEl={ anchorEl }
+            open={ Boolean(anchorEl) }
+            onClose={ this.handleClose }
+            className={ classes.mobileNavMenu }
           >
             <Link to="/">
-              <MenuItem className={classes.mobileNavItem} onClick={this.handleClose}>about us</MenuItem>
+              <MenuItem className={ classes.mobileNavItem } onClick={ this.handleClose }>about us</MenuItem>
             </Link>
             <Link to="/work">
-              <MenuItem className={classes.mobileNavItem} onClick={this.handleClose}>work</MenuItem>
+              <MenuItem className={ classes.mobileNavItem } onClick={ this.handleClose }>work</MenuItem>
             </Link>
             <Link to="/shop">
-              <MenuItem className={classes.mobileNavItem} onClick={this.handleClose}>shop</MenuItem>
+              <MenuItem className={ classes.mobileNavItem } onClick={ this.handleClose }>shop</MenuItem>
             </Link>
             <Link to="/customer">
-              <MenuItem className={classes.mobileNavItem} onClick={this.handleClose}>customer</MenuItem>
+              <MenuItem className={ classes.mobileNavItem } onClick={ this.handleClose }>customer</MenuItem>
             </Link>
           </Menu>
         </div>

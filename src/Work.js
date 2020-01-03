@@ -33,12 +33,12 @@ class Work extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.work}>
+      <div className={ classes.work }>
         <Dialog
-          open={this.state.open}
+          open={ this.state.open }
           TransitionComponent={Transition}
           keepMounted
-          onClose={this.handleClose}
+          onClose={ this.handleClose }
           aria-labelledby="alert-dialog-slide-title"
           aria-describedby="alert-dialog-slide-description"
         >
@@ -53,7 +53,7 @@ class Work extends React.Component {
           </DialogContent>
           <DialogActions>
             <Link to='/'>
-              <Button onClick={this.handleClose} color="primary">
+              <Button onClick={ this.handleClose } color="primary">
                 Cool
               </Button>
             </Link>

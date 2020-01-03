@@ -19,8 +19,8 @@ function Shop(props) {
         addToBasket={ addToBasket }
         updateBasket={ updateBasket }
         />
-      <div className={classes.productsContainer}>
-        <div className={classes.products}>
+      <div className={ classes.productsContainer }>
+        <div className={ classes.products }>
           {
             bikes.map(bike => {
               return (

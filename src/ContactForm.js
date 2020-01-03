@@ -60,8 +60,8 @@ class ContactForm extends Component {
             <TextField
               id="outlined-email-input"
               label="Email"
-              className={classes.textField}
-              onChange={this.handleChange}
+              className={ classes.textField }
+              onChange={ this.handleChange }
               type="email"
               name="email"
               value={ email }
@@ -72,9 +72,9 @@ class ContactForm extends Component {
               id="outlined-subject"
               label="Subject"
               name="subject"
-              className={classes.textField}
+              className={ classes.textField }
               value={ subject }
-              onChange={this.handleChange}
+              onChange={ this.handleChange }
               variant="filled"
             />
             <TextField
@@ -82,13 +82,13 @@ class ContactForm extends Component {
               label="Message"
               value={ message }
               name="message"
-              onChange={this.handleChange}
+              onChange={ this.handleChange }
               multiline
-              className={classes.textArea}
+              className={ classes.textArea }
               variant="filled"
-              rows={5}
+              rows={ 5 }
             />
-            <Button className={classes.submitButton} type="submit" variant="outlined" color="primary"> SEND </Button>
+            <Button className={ classes.submitButton } type="submit" variant="outlined" color="primary"> SEND </Button>
         </form>
       </div>
     )

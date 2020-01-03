@@ -44,19 +44,19 @@ class ResponsiveDialog extends React.Component {
     const { fullScreen, classes, basketItems, removeFromBasket, basketTotal, basketQuantity, updateBasket } = this.props;
     return (
       <div>
-        <Button className={classes.basketOpenButton} onClick={this.handleClickOpen}>
-        <span className={classes.itemsNumber}>{ basketQuantity }</span>  
+        <Button className={ classes.basketOpenButton } onClick={ this.handleClickOpen }>
+        <span className={ classes.itemsNumber }>{ basketQuantity }</span>  
         <ShoppingBasket 
-            className={classes.basket}
+            className={ classes.basket }
           />
         </Button>
         <Dialog
-          fullScreen={fullScreen}
-          open={this.state.open}
-          onClose={this.handleClose}
+          fullScreen={ fullScreen }
+          open={ this.state.open }
+          onClose={ this.handleClose }
           aria-labelledby="responsive-dialog-title"
         >
-          <DialogTitle className={classes.basketHeader} id="responsive-dialog-title">{"Your Basket"}</DialogTitle>
+          <DialogTitle className={ classes.basketHeader } id="responsive-dialog-title">{"Your Basket"}</DialogTitle>
           <Divider />
           <DialogContent>
           {
@@ -64,46 +64,46 @@ class ResponsiveDialog extends React.Component {
             basketItems.map((item => {
               return (
                 <div 
-                  className={classes.basketItem}
+                  className={ classes.basketItem }
                   key={ uuid() }>
-                  <div className={classes.itemWrapper}>
-                    <div className={classes.itemImageContainer}>
-                      <img className={classes.itemImage} src={item.images[0].src} alt="itemImage"/>
+                  <div className={ classes.itemWrapper }>
+                    <div className={ classes.itemImageContainer }>
+                      <img className={ classes.itemImage  } src={ item.images[0].src } alt="itemImage"/>
                     </div>
-                    <h4 className={classes.itemName}>
-                      {item.bikeName}
+                    <h4 className={ classes.itemName }>
+                      { item.bikeName }
                     </h4>
                   </div>
-                  <div className={classes.basketInfo}>
+                  <div className={ classes.basketInfo }>
                     <Fab onClick={() => updateBasket(item.id, "add")} size="small" color="primary" variant="extended" aria-label="Add">
                       <span>&#43;</span>
                     </Fab>
-                      <span className={classes.quantity}>
+                      <span className={ classes.quantity }>
                         Qty: { item.quantity }
                       </span>
                     <Fab onClick={() => updateBasket(item.id)} size="small" color="secondary" variant="extended" aria-label="Delete">
                       <span>&#8722;</span>
                     </Fab>
-                    <Button className={classes.removeItemButton} onClick={() => removeFromBasket(item.id)}>
+                    <Button className={ classes.removeItemButton } onClick={() => removeFromBasket(item.id)}>
                       <RemoveShoppingCart />
                     </Button>
                   </div>
                 </div>
               )
             }))) : (
-              <h2 className={classes.noItems}>
+              <h2 className={ classes.noItems }>
                 You do not have any items
               </h2>
             )
           }
           </DialogContent>
-            <h3 className={classes.total}> <span className={classes.wordTotal}>Total: </span> {`${basketTotal} $`} </h3>
-            <p className={classes.shippingInfo}>{basketTotal >= 1500 ? 'You got free shipping ! Yupi !' : 'Free shipping from 1500 $' }</p>
-            <Button onClick={this.handlePayment} className={classes.pay} variant="contained" color="primary">
+            <h3 className={ classes.total }> <span className={ classes.wordTotal }>Total: </span> {`${basketTotal} $`} </h3>
+            <p className={ classes.shippingInfo }>{ basketTotal >= 1500 ? 'You got free shipping ! Yupi !' : 'Free shipping from 1500 $' }</p>
+            <Button onClick={ this.handlePayment } className={ classes.pay } variant="contained" color="primary">
               go to payment
             </Button>
-          <DialogActions className={classes.basketFooter}>
-            <Button onClick={this.handleClose}>
+          <DialogActions className={ classes.basketFooter }>
+            <Button onClick={ this.handleClose }>
               Close
             </Button>
           </DialogActions>
